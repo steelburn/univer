@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import { dateKit } from '@univerjs/core';
 import { DEFAULT_DATE_FORMAT, excelDateSerial } from '../../../basics/date';
 import { NumberValueObject } from '../../../engine/value-object/primitive-object';
 import { BaseFunction } from '../../base-function';
@@ -24,8 +25,8 @@ export class Today extends BaseFunction {
     override maxParams = 0;
 
     override calculate() {
-        const now = new Date();
-        const utcNow = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+        const now = dateKit().utc();
+        const utcNow = now.toDate();
         const currentSerial = excelDateSerial(utcNow);
         const valueObject = NumberValueObject.create(currentSerial, DEFAULT_DATE_FORMAT);
         return valueObject;

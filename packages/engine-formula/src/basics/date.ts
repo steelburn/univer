@@ -15,7 +15,7 @@
  */
 
 import type { BaseValueObject } from '../engine/value-object/base-value-object';
-import { isRealNum, numfmt } from '@univerjs/core';
+import { dateKit, isRealNum, numfmt } from '@univerjs/core';
 import { ErrorValueObject } from '../engine/value-object/base-value-object';
 import { ErrorType } from './error-type';
 
@@ -132,10 +132,10 @@ export function isValidDateStr(dateStr: string): boolean {
     }
     // Convert date string to local time format
     const normalizedDateStr = dateStr.replace(/-/g, '/').replace(/T.+/, '');
-    const dateWithTime = new Date(`${normalizedDateStr}`);
+    const dateWithTime = dateKit(normalizedDateStr).toDate();
 
     // Check if the date is valid
-    if (Number.isNaN(dateWithTime.getTime())) {
+    if (!dateKit(dateWithTime).isValid()) {
         return false;
     }
 

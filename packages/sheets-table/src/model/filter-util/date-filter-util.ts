@@ -15,6 +15,7 @@
  */
 
 import type { ITableDateFilterInfo } from '../../types/type';
+import { dateKit } from '@univerjs/core';
 import { TableDateCompareTypeEnum } from '../../types/enum';
 
 /**
@@ -171,7 +172,7 @@ export const dateM12 = (date: Date): boolean => {
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const today = (expectedDate: Date, anchorTime: Date = new Date()): boolean => {
+export const today = (expectedDate: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     return expectedDate.toDateString() === anchorTime.toDateString();
 };
 
@@ -181,10 +182,9 @@ export const today = (expectedDate: Date, anchorTime: Date = new Date()): boolea
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const tomorrow = (date: Date, anchorTime: Date = new Date()): boolean => {
-    const tomorrow = new Date(anchorTime);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return date.toDateString() === tomorrow.toDateString();
+export const tomorrow = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
+    const tomorrowDate = dateKit(anchorTime).add(1, 'day').toDate();
+    return date.toDateString() === tomorrowDate.toDateString();
 };
 
 /**
@@ -193,10 +193,9 @@ export const tomorrow = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const yesterday = (date: Date, anchorTime: Date = new Date()): boolean => {
-    const yesterday = new Date(anchorTime);
-    yesterday.setDate(yesterday.getDate() - 1);
-    return date.toDateString() === yesterday.toDateString();
+export const yesterday = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
+    const yesterdayDate = dateKit(anchorTime).subtract(1, 'day').toDate();
+    return date.toDateString() === yesterdayDate.toDateString();
 };
 
 /**
@@ -205,11 +204,7 @@ export const yesterday = (date: Date, anchorTime: Date = new Date()): boolean =>
  * @returns {Date} The start date of the week.
  */
 const getWeekStart = (date: Date): Date => {
-    const day = date.getDay();
-    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-    const weekStart = new Date(date);
-    weekStart.setDate(diff);
-    return weekStart;
+    return dateKit(date).startOf('week').toDate();
 };
 
 const perWeek = 7 * 24 * 60 * 60 * 1000;
@@ -220,7 +215,7 @@ const perWeek = 7 * 24 * 60 * 60 * 1000;
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const thisWeek = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const thisWeek = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const weekStart = getWeekStart(date);
     const anchorTimeWeekStart = getWeekStart(anchorTime);
     return weekStart.toDateString() === anchorTimeWeekStart.toDateString();
@@ -232,9 +227,9 @@ export const thisWeek = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const nextWeek = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const nextWeek = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const weekStart = getWeekStart(date);
-    const anchorTimeNextWeekStart = new Date(getWeekStart(anchorTime).getTime() + perWeek);
+    const anchorTimeNextWeekStart = dateKit(getWeekStart(anchorTime)).add(7, 'day').toDate();
     return weekStart.toDateString() === anchorTimeNextWeekStart.toDateString();
 };
 
@@ -244,9 +239,9 @@ export const nextWeek = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const lastWeek = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const lastWeek = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const weekStart = getWeekStart(date);
-    const anchorTimeLastWeekStart = new Date(getWeekStart(anchorTime).getTime() - perWeek);
+    const anchorTimeLastWeekStart = dateKit(getWeekStart(anchorTime)).subtract(7, 'day').toDate();
     return weekStart.toDateString() === anchorTimeLastWeekStart.toDateString();
 };
 
@@ -256,7 +251,7 @@ export const lastWeek = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const thisMonth = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const thisMonth = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     return date.getFullYear() === anchorTime.getFullYear() && date.getMonth() === anchorTime.getMonth();
 };
 
@@ -266,10 +261,7 @@ export const thisMonth = (date: Date, anchorTime: Date = new Date()): boolean =>
  * @returns {Date} The start date of the month.
  */
 const getMonthStart = (date: Date): Date => {
-    const monthStart = new Date(date);
-    monthStart.setHours(0, 0, 0, 0);
-    monthStart.setDate(1);
-    return monthStart;
+    return dateKit(date).startOf('month').toDate();
 };
 
 /**
@@ -278,16 +270,10 @@ const getMonthStart = (date: Date): Date => {
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const nextMonth = (date: Date, anchorTime: Date = new Date()): boolean => {
-    const nextMonthStart = new Date(anchorTime);
-    nextMonthStart.setHours(0, 0, 0, 0);
-    nextMonthStart.setMonth(nextMonthStart.getMonth() + 1, 1);
-
-    const monthEnd = new Date(nextMonthStart);
-    monthEnd.setMonth(monthEnd.getMonth() + 1, 0);
-
+export const nextMonth = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
+    const nextMonthStart = dateKit(anchorTime).add(1, 'month').startOf('month').toDate();
+    const monthEnd = dateKit(nextMonthStart).endOf('month').toDate();
     const dateTime = date.getTime();
-
     return dateTime >= nextMonthStart.getTime() && dateTime < monthEnd.getTime();
 };
 
@@ -297,14 +283,10 @@ export const nextMonth = (date: Date, anchorTime: Date = new Date()): boolean =>
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const lastMonth = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const lastMonth = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const lastMonthStart = getMonthStart(anchorTime);
-
-    const monthEnd = new Date(lastMonthStart);
-    monthEnd.setMonth(monthEnd.getMonth() + 1, 0);
-
+    const monthEnd = dateKit(lastMonthStart).endOf('month').toDate();
     const dateTime = date.getTime();
-
     return dateTime >= lastMonthStart.getTime() && dateTime < monthEnd.getTime();
 };
 
@@ -314,9 +296,7 @@ export const lastMonth = (date: Date, anchorTime: Date = new Date()): boolean =>
  * @returns {Date} The start date of the quarter.
  */
 const getQuarterStart = (date: Date): Date => {
-    const quarterStart = new Date(date);
-    quarterStart.setHours(0, 0, 0, 0);
-    quarterStart.setDate(1);
+    const quarterStart = dateKit(date).startOf('month').toDate();
     const month = quarterStart.getMonth();
     quarterStart.setMonth(month - month % 3);
     return quarterStart;
@@ -328,10 +308,9 @@ const getQuarterStart = (date: Date): Date => {
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const thisQuarter = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const thisQuarter = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const quarterStart = getQuarterStart(anchorTime);
-    const nextQuarterStart = new Date(quarterStart);
-    nextQuarterStart.setMonth(nextQuarterStart.getMonth() + 3);
+    const nextQuarterStart = dateKit(quarterStart).add(3, 'month').toDate();
     const dateTime = date.getTime();
     return dateTime >= quarterStart.getTime() && dateTime < nextQuarterStart.getTime();
 };
@@ -342,15 +321,11 @@ export const thisQuarter = (date: Date, anchorTime: Date = new Date()): boolean 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const nextQuarter = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const nextQuarter = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const quarterStart = getQuarterStart(anchorTime);
-    const nextQuarterStart = new Date(quarterStart);
-    nextQuarterStart.setMonth(nextQuarterStart.getMonth() + 3);
-    const nextQuarterEnd = new Date(nextQuarterStart);
-    nextQuarterEnd.setMonth(nextQuarterEnd.getMonth() + 3, 0);
-
+    const nextQuarterStart = dateKit(quarterStart).add(3, 'month').toDate();
+    const nextQuarterEnd = dateKit(nextQuarterStart).add(3, 'month').toDate();
     const dateTime = date.getTime();
-
     return dateTime >= nextQuarterStart.getTime() && dateTime < nextQuarterEnd.getTime();
 };
 
@@ -360,15 +335,11 @@ export const nextQuarter = (date: Date, anchorTime: Date = new Date()): boolean 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const lastQuarter = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const lastQuarter = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     const quarterStart = getQuarterStart(anchorTime);
-    const lastQuarterStart = new Date(quarterStart);
-    lastQuarterStart.setMonth(lastQuarterStart.getMonth() - 3);
-    const lastQuarterEnd = new Date(quarterStart);
-    lastQuarterEnd.setDate(0);
-
+    const lastQuarterStart = dateKit(quarterStart).subtract(3, 'month').toDate();
+    const lastQuarterEnd = dateKit(quarterStart).subtract(1, 'day').toDate();
     const dateTime = date.getTime();
-
     return dateTime >= lastQuarterStart.getTime() && dateTime < lastQuarterEnd.getTime();
 };
 
@@ -378,7 +349,7 @@ export const lastQuarter = (date: Date, anchorTime: Date = new Date()): boolean 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const thisYear = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const thisYear = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     return date.getFullYear() === anchorTime.getFullYear();
 };
 
@@ -388,7 +359,7 @@ export const thisYear = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const nextYear = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const nextYear = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     return date.getFullYear() === anchorTime.getFullYear() + 1;
 };
 
@@ -398,7 +369,7 @@ export const nextYear = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const lastYear = (date: Date, anchorTime: Date = new Date()): boolean => {
+export const lastYear = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
     return date.getFullYear() === anchorTime.getFullYear() - 1;
 };
 
@@ -408,10 +379,8 @@ export const lastYear = (date: Date, anchorTime: Date = new Date()): boolean => 
  * @param {Date} [anchorTime] - The reference date.
  * @returns {boolean} return the date is match
  */
-export const yearToDate = (date: Date, anchorTime: Date = new Date()): boolean => {
-    const yearStart = new Date(anchorTime);
-    yearStart.setHours(0, 0, 0, 0);
-    yearStart.setMonth(0, 1);
+export const yearToDate = (date: Date, anchorTime: Date = dateKit().toDate()): boolean => {
+    const yearStart = dateKit(anchorTime).startOf('year').toDate();
     const dateTime = date.getTime();
     return dateTime >= yearStart.getTime() && dateTime < anchorTime.getTime();
 };
@@ -421,122 +390,122 @@ export function getDateFilterExecuteFunc(filterInfo: ITableDateFilterInfo) {
     switch (filterInfo.compareType) {
         case TableDateCompareTypeEnum.Equal:
         {
-            const expected = new Date(filterInfo.expectedValue as string | Date);
+            const expected = dateKit(filterInfo.expectedValue as string | Date).toDate();
             return (date: Date) => date.getTime() === expected.getTime();
         }
         case TableDateCompareTypeEnum.NotEqual:
         {
-            const expected = new Date(filterInfo.expectedValue as string | Date);
+            const expected = dateKit(filterInfo.expectedValue as string | Date).toDate();
             return (date: Date) => date.getTime() !== expected.getTime();
         }
         case TableDateCompareTypeEnum.After:
         {
-            const expected = new Date(filterInfo.expectedValue as string | Date);
+            const expected = dateKit(filterInfo.expectedValue as string | Date).toDate();
             return (date: Date) => date.getTime() > expected.getTime();
         }
         case TableDateCompareTypeEnum.Before:
         {
-            const expected = new Date(filterInfo.expectedValue as string | Date);
+            const expected = dateKit(filterInfo.expectedValue as string | Date).toDate();
             return (date: Date) => date.getTime() < expected.getTime();
         }
         case TableDateCompareTypeEnum.AfterOrEqual:
         {
-            const expected = new Date(filterInfo.expectedValue as string | Date);
+            const expected = dateKit(filterInfo.expectedValue as string | Date).toDate();
             return (date: Date) => date.getTime() >= expected.getTime();
         }
         case TableDateCompareTypeEnum.BeforeOrEqual:
         {
-            const expected = new Date(filterInfo.expectedValue as string | Date);
+            const expected = dateKit(filterInfo.expectedValue as string | Date).toDate();
             return (date: Date) => date.getTime() <= expected.getTime();
         }
         case TableDateCompareTypeEnum.Between:
             return (date: Date) => {
                 const [start, end] = filterInfo.expectedValue as [Date, Date];
-                return date.getTime() >= new Date(start).getTime() && date.getTime() <= new Date(end).getTime();
+                return date.getTime() >= dateKit(start).toDate().getTime() && date.getTime() <= dateKit(end).toDate().getTime();
             };
         case TableDateCompareTypeEnum.NotBetween:
             return (date: Date) => {
                 const [start, end] = filterInfo.expectedValue as [Date, Date];
-                return date.getTime() < new Date(start).getTime() || date.getTime() > new Date(end).getTime();
+                return date.getTime() < dateKit(start).toDate().getTime() || date.getTime() > dateKit(end).toDate().getTime();
             };
         case TableDateCompareTypeEnum.Today:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => today(date, anchorTime);
         }
         case TableDateCompareTypeEnum.Yesterday:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => yesterday(date, anchorTime);
         }
         case TableDateCompareTypeEnum.Tomorrow:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => tomorrow(date, anchorTime);
         }
         case TableDateCompareTypeEnum.ThisWeek:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => thisWeek(date, anchorTime);
         }
         case TableDateCompareTypeEnum.LastWeek:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => lastWeek(date, anchorTime);
         }
         case TableDateCompareTypeEnum.NextWeek:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => nextWeek(date, anchorTime);
         }
         case TableDateCompareTypeEnum.ThisMonth:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => thisMonth(date, anchorTime);
         }
         case TableDateCompareTypeEnum.LastMonth:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => lastMonth(date, anchorTime);
         }
         case TableDateCompareTypeEnum.NextMonth:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => nextMonth(date, anchorTime);
         }
         case TableDateCompareTypeEnum.ThisQuarter:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => thisQuarter(date, anchorTime);
         }
         case TableDateCompareTypeEnum.LastQuarter:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => lastQuarter(date, anchorTime);
         }
         case TableDateCompareTypeEnum.NextQuarter:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => nextQuarter(date, anchorTime);
         }
         case TableDateCompareTypeEnum.ThisYear:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => thisYear(date, anchorTime);
         }
         case TableDateCompareTypeEnum.LastYear:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => lastYear(date, anchorTime);
         }
         case TableDateCompareTypeEnum.NextYear:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => nextYear(date, anchorTime);
         }
         case TableDateCompareTypeEnum.YearToDate:
         {
-            const anchorTime = filterInfo.anchorTime ? new Date(filterInfo.anchorTime) : new Date();
+            const anchorTime = filterInfo.anchorTime ? dateKit(filterInfo.anchorTime).toDate() : dateKit().toDate();
             return (date: Date) => yearToDate(date, anchorTime);
         }
         case TableDateCompareTypeEnum.M1:

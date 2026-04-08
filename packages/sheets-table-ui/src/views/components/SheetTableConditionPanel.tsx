@@ -16,7 +16,7 @@
 
 import type { ITableFilterItem } from '@univerjs/sheets-table';
 import type { IConditionCompareTypeEnum, IConditionExpect, IConditionInfo, ITableConditionTypeEnumWithoutLogic } from './type';
-import { Injector, LocaleService } from '@univerjs/core';
+import { dateKit, Injector, LocaleService } from '@univerjs/core';
 import { borderClassName, CascaderList, clsx, DatePicker, DateRangePicker, Dropdown, Input, InputNumber, Select } from '@univerjs/design';
 import { MoreDownIcon } from '@univerjs/icons';
 import { TableConditionTypeEnum, TableDateCompareTypeEnum, TableStringCompareTypeEnum } from '@univerjs/sheets-table';
@@ -66,9 +66,9 @@ export const SheetTableConditionPanel = (props: IConditionFilterProps) => {
             } else if (compare === TableDateCompareTypeEnum.Month) {
                 info.dateSelect = TableDateCompareTypeEnum.M1;
             } else if (datePickerSet.has(compare)) {
-                info.date = new Date();
+                info.date = dateKit().toDate();
             } else {
-                info.dateRange = [new Date(), new Date()];
+                info.dateRange = [dateKit().toDate(), dateKit().toDate()];
             }
         } else if (type === TableConditionTypeEnum.Number) {
             info.number = 0;
@@ -153,7 +153,7 @@ export const SheetTableConditionPanel = (props: IConditionFilterProps) => {
                     <div id="univer-table-date-picker-wrapper">
                         <DatePicker
                             className="univer-w-full"
-                            value={conditionInfo.info.date ?? new Date()}
+                            value={conditionInfo.info.date ?? dateKit().toDate()}
                             onValueChange={(v) => handleConditionInfo({ date: v })}
                         />
                     </div>
@@ -162,7 +162,7 @@ export const SheetTableConditionPanel = (props: IConditionFilterProps) => {
                     <div id="univer-table-date-range-wrapper">
                         <DateRangePicker
                             className="univer-w-full"
-                            value={[conditionInfo.info.dateRange?.[0] ?? new Date(), conditionInfo.info.dateRange?.[1] ?? new Date()]}
+                            value={[conditionInfo.info.dateRange?.[0] ?? dateKit().toDate(), conditionInfo.info.dateRange?.[1] ?? dateKit().toDate()]}
                             onValueChange={(v) => {
                                 if (v) {
                                     handleConditionInfo({ dateRange: v });
