@@ -40,6 +40,7 @@ export * from './context';
 export * from './custom';
 export { DrawingGroupObject } from './drawing-group';
 export * from './engine';
+export * from './engine-v2';
 export * from './group';
 export * from './layer';
 export { IRenderingEngine, UniverRenderEnginePlugin } from './plugin';

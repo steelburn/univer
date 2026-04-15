@@ -15,8 +15,8 @@
  */
 
 import type { Nullable } from '@univerjs/core';
+import type { IBoundRectNoAngle } from './basics/vector2';
 import type { UniverRenderingContext } from './context';
-
 import type { Scene } from './scene';
 import type { SceneViewer } from './scene-viewer';
 import { Disposable, requestImmediateMacroTask, sortRules, toDisposable } from '@univerjs/core';
@@ -216,7 +216,7 @@ export class Layer extends Disposable {
         return this._dirty;
     }
 
-    render(parentCtx?: UniverRenderingContext, isMaxLayer = false) {
+    render(parentCtx?: UniverRenderingContext, isMaxLayer = false, dirtyRegions?: IBoundRectNoAngle[]) {
         const mainCtx = parentCtx || this._scene.getEngine()?.getCanvas().getContext();
         if (mainCtx) {
             if (this._allowCache && this._cacheCanvas) {
@@ -228,14 +228,14 @@ export class Layer extends Disposable {
                     ctx.save();
 
                     ctx.setTransform(mainCtx.getTransform());
-                    this._draw(ctx, isMaxLayer);
+                    this._draw(ctx, isMaxLayer, dirtyRegions);
 
                     ctx.restore();
                 }
                 this._applyCache(mainCtx);
             } else {
                 mainCtx.save();
-                this._draw(mainCtx, isMaxLayer);
+                this._draw(mainCtx, isMaxLayer, dirtyRegions);
                 mainCtx.restore();
             }
         }
@@ -267,11 +267,11 @@ export class Layer extends Disposable {
         this._cacheCanvas = new Canvas({ colorService: engine?.canvasColorService });
     }
 
-    private _draw(mainCtx: UniverRenderingContext, isMaxLayer: boolean) {
+    private _draw(mainCtx: UniverRenderingContext, isMaxLayer: boolean, dirtyRegions?: IBoundRectNoAngle[]) {
         const viewports = this._scene.getViewports().filter((vp) => vp.shouldIntoRender());
         const objects = this.getObjectsByOrder();
         for (const [_index, vp] of viewports.entries()) {
-            vp.render(mainCtx, objects, isMaxLayer);
+            vp.render(mainCtx, objects, isMaxLayer, dirtyRegions);
         }
         objects.forEach((o) => {
             o.makeDirty(false);

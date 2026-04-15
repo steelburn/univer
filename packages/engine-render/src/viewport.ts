@@ -738,7 +738,7 @@ export class Viewport {
      * @param objects
      * @param isMaxLayer
      */
-    render(parentCtx?: UniverRenderingContext, objects: BaseObject[] = [], isMaxLayer = false): void {
+    render(parentCtx?: UniverRenderingContext, objects: BaseObject[] = [], isMaxLayer = false, dirtyRegions?: IBoundRectNoAngle[]): void {
         if (!this.shouldIntoRender()) {
             return;
         }
@@ -759,6 +759,15 @@ export class Viewport {
             // this.left has handle scale already, no need to `this.width * scale`
             // const { scaleX, scaleY } = this._getBoundScale(m[0], m[3]);
             mainCtx.rect(this.left, this.top, (this.width || 0), (this.height || 0));
+            mainCtx.clip();
+        }
+
+        // Apply dirty-region clipping in canvas space before scene transform.
+        if (dirtyRegions && dirtyRegions.length > 0) {
+            mainCtx.beginPath();
+            for (const region of dirtyRegions) {
+                mainCtx.rect(region.left, region.top, region.right - region.left, region.bottom - region.top);
+            }
             mainCtx.clip();
         }
 
@@ -1304,6 +1313,7 @@ export class Viewport {
             isTrigger,
         };
         this._scrollBar?.makeDirty(true);
+        this._notifyEngineDirtyRegion();
         this.onScrollAfter$.emitEvent(scrollSubParam);
         this._emitScrollEnd$(scrollSubParam);
 
@@ -1388,6 +1398,18 @@ export class Viewport {
             top: value.top - this.bufferEdgeY - onePixelFix,
             bottom: value.bottom + this.bufferEdgeY + onePixelFix,
         } as IBoundRectNoAngle;
+    }
+
+    private _notifyEngineDirtyRegion() {
+        const engine = this._scene.getEngine();
+        if (this.width != null && this.height != null && (engine as any)?.markSceneDirty) {
+            (engine as any).markSceneDirty(this._scene, {
+                left: this.left,
+                top: this.top,
+                right: this.left + this.width,
+                bottom: this.top + this.height,
+            });
+        }
     }
 
     updatePrevCacheBounds(viewBound?: IBoundRectNoAngle) {

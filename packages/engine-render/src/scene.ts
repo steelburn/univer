@@ -281,6 +281,10 @@ export class Scene extends Disposable {
         if (this._parent.classType === RENDER_CLASS_TYPE.SCENE_VIEWER) {
             (this._parent as SceneViewer)?.makeDirty(state);
         }
+        if (state) {
+            const engine = this.getEngine();
+            (engine as any)?.markSceneFullyDirty?.(this);
+        }
         return this;
     }
 
@@ -288,6 +292,10 @@ export class Scene extends Disposable {
         this._layers.forEach((layer) => {
             layer.makeDirty(state);
         });
+        if (state) {
+            const engine = this.getEngine();
+            (engine as any)?.markSceneFullyDirty?.(this);
+        }
         return this;
     }
 
@@ -737,13 +745,21 @@ export class Scene extends Disposable {
             return;
         }
 
-        !parentCtx && this.getEngine()?.clearCanvas();
+        const engine = this.getEngine();
+        const activeDirtyRegions = (engine as any)?._getActiveDirtyRegionsForScene?.(this) ?? null;
+
+        if (!parentCtx) {
+            if (!activeDirtyRegions) {
+                engine?.clearCanvas();
+            }
+            // When activeDirtyRegions exists, EngineV2 has already cleared the dirty rects.
+        }
 
         const layers = this._layers.sort(sortRules);
-        const canvasInstance = this.getEngine()?.getCanvas();
+        const canvasInstance = engine?.getCanvas();
         this._beforeRender$.next(canvasInstance);
         for (let i = 0, len = layers.length; i < len; i++) {
-            layers[i].render(parentCtx, i === len - 1);
+            layers[i].render(parentCtx, i === len - 1, activeDirtyRegions ?? undefined);
         }
         this._afterRender$.next(canvasInstance);
     }
