@@ -63,7 +63,7 @@ export interface ISetStyleCommandParams<T> extends ISetStyleCommonParams {
     style: IStyleTypeValue<T>;
 }
 
-export const AFFECT_LAYOUT_STYLES = ['ff', 'fs', 'tr', 'tb'];
+export const AFFECT_LAYOUT_STYLES = ['ff', 'fs', 'tr', 'tb', 'sh'];
 
 /**
  * The command to set cell style.
@@ -586,6 +586,33 @@ export const SetTextRotationCommand: ICommand<ISetTextRotationCommandParams> = {
             style: {
                 type: 'tr',
                 value,
+            },
+        };
+
+        return commandService.syncExecuteCommand(SetStyleCommand.id, setStyleParams);
+    },
+};
+
+export interface ISetShrinkToFitCommandParams extends ISetStyleCommonParams {
+    value: BooleanNumber;
+}
+
+export const SetShrinkToFitCommand: ICommand<ISetShrinkToFitCommandParams> = {
+    type: CommandType.COMMAND,
+    id: 'sheet.command.set-shrink-to-fit',
+    handler: (accessor, params) => {
+        if (!params) {
+            return false;
+        }
+
+        const commandService = accessor.get(ICommandService);
+        const setStyleParams: ISetStyleCommandParams<BooleanNumber> = {
+            unitId: params.unitId,
+            subUnitId: params.subUnitId,
+            range: params.range,
+            style: {
+                type: 'sh',
+                value: params.value,
             },
         };
 

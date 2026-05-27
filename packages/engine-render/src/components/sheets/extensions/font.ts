@@ -25,8 +25,8 @@ import type { IDrawInfo } from '../../extension';
 import type { IFontCacheItem } from '../interfaces';
 import type { SheetComponent } from '../sheet-component';
 import type { SpreadsheetSkeleton } from '../sheet.render-skeleton';
-import { CellValueType, getDisplayValueFromCell, HorizontalAlign, Range, Tools, VerticalAlign, WrapStrategy } from '@univerjs/core';
-import { FIX_ONE_PIXEL_BLUR_OFFSET } from '../../../basics';
+import { BooleanNumber, CellValueType, getDisplayValueFromCell, HorizontalAlign, Range, Tools, VerticalAlign, WrapStrategy } from '@univerjs/core';
+import { FIX_ONE_PIXEL_BLUR_OFFSET, FontCache } from '../../../basics';
 import { VERTICAL_ROTATE_ANGLE } from '../../../basics/text-rotation';
 import { clampRange, inViewRanges } from '../../../basics/tools';
 import { Text } from '../../../shape/text';
@@ -542,9 +542,20 @@ export class Font extends SheetExtension {
             }
         }
 
+        let fontStyle = fontCache.fontString;
+        const shrinkToFit = fontCache.style?.sh === BooleanNumber.TRUE;
+        if (shrinkToFit && wrapStrategy !== WrapStrategy.WRAP) {
+            const textSize = FontCache.getMeasureText(text, fontCache.fontString);
+            const textWidth = textSize.width;
+            if (textWidth > cellWidth && cellWidth > 0) {
+                const shrinkScale = cellWidth / textWidth;
+                fontStyle = fontCache.fontString.replace(/(\d+(?:\.\d+)?)pt/, (_, size) => `${Number.parseFloat(size) * shrinkScale}pt`);
+            }
+        }
+
         Text.drawWith(ctx, {
             text,
-            fontStyle: fontCache.fontString,
+            fontStyle,
             warp: wrapStrategy === WrapStrategy.WRAP && vertexAngle === 0,
             hAlign,
             vAlign: fontCache.verticalAlign,
@@ -626,6 +637,21 @@ export class Font extends SheetExtension {
             right: endX - startX,
             bottom: endY - startY,
         };
+
+        let shrinkScale = 1;
+        const shrinkToFit = fontCache.style?.sh === BooleanNumber.TRUE;
+        if (shrinkToFit && wrapStrategy !== WrapStrategy.WRAP) {
+            const contentSize = getDocsSkeletonPageSize(documentSkeleton, vertexAngle);
+            if (contentSize && contentSize.width > cellWidth && cellWidth > 0) {
+                shrinkScale = cellWidth / contentSize.width;
+            }
+        }
+
+        if (shrinkScale < 1) {
+            ctx.save();
+            ctx.scale(shrinkScale, shrinkScale);
+        }
+
         documentSkeleton.makeDirty(false);
         documents.resize(cellWidth, cellHeight);
         documents.changeSkeleton(documentSkeleton).render(ctx, {
@@ -636,6 +662,10 @@ export class Font extends SheetExtension {
                 bottom: viewBoundRightBottom.bottom,
             } as IBoundRectNoAngle,
         } as Partial<IViewportInfo>);
+
+        if (shrinkScale < 1) {
+            ctx.restore();
+        }
     }
 
     private _clipRectangleForOverflow(

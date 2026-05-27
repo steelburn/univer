@@ -41,6 +41,7 @@ export {
     SetRangeFontIncreaseCommand,
     SetRangeFontSizeCommand,
     SetRangeItalicCommand,
+    SetRangeShrinkToFitCommand,
     SetRangeStrickThroughCommand,
     SetRangeSubscriptCommand,
     SetRangeSuperscriptCommand,

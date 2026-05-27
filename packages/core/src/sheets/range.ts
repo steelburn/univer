@@ -731,6 +731,14 @@ export class Range {
         return this.getWrapStrategies()[0][0];
     }
 
+    /**
+     * Returns whether the cell's text is set to shrink to fit.
+     */
+    getShrinkToFit(): BooleanNumber {
+        const styles = this._getStyles('sh') as BooleanNumber[][];
+        return styles[0][0] ?? BooleanNumber.FALSE;
+    }
+
     forEach(action: (row: number, column: number) => void): void {
         Range.foreach(this._range, action);
     }

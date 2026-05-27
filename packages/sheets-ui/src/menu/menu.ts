@@ -96,6 +96,7 @@ import {
     SetRangeBoldCommand,
     SetRangeFontFamilyCommand,
     SetRangeItalicCommand,
+    SetRangeShrinkToFitCommand,
     SetRangeStrickThroughCommand,
     SetRangeTextColorCommand,
     SetRangeUnderlineCommand,
@@ -746,6 +747,67 @@ export function VerticalAlignMenuItemFactory(accessor: IAccessor): IMenuSelector
             worksheetTypes: [WorksheetEditPermission, WorksheetSetCellStylePermission],
             rangeTypes: [RangeProtectionPermissionEditPoint],
         }),
+    };
+}
+
+export function ShrinkToFitMenuItemFactory(accessor: IAccessor): IMenuButtonItem {
+    const commandService = accessor.get(ICommandService);
+    const univerInstanceService = accessor.get(IUniverInstanceService);
+    const selectionManagerService = accessor.get(SheetsSelectionsService);
+    const contextService = accessor.get(IContextService);
+
+    return {
+        id: SetRangeShrinkToFitCommand.id,
+        type: MenuItemType.BUTTON,
+        icon: 'FontSizeReduceIcon',
+        title: 'Set shrink to fit',
+        tooltip: 'sheets-ui.toolbar.shrinkToFit',
+        disabled$: getCurrentRangeDisable$(accessor, {
+            workbookTypes: [WorkbookEditablePermission],
+            worksheetTypes: [WorksheetEditPermission, WorksheetSetCellStylePermission],
+            rangeTypes: [RangeProtectionPermissionEditPoint],
+        }, true),
+        activated$: deriveStateFromActiveSheet$(univerInstanceService, false, ({ worksheet }) => new Observable<boolean>((subscriber) => {
+            const disposable = commandService.onCommandExecuted((c) => {
+                const id = c.id;
+                if (id === SetRangeValuesMutation.id || id === SetSelectionsOperation.id || id === SetWorksheetActiveOperation.id) {
+                    const primary = selectionManagerService.getCurrentLastSelection()?.primary;
+                    let isShrinkToFit = BooleanNumber.FALSE;
+
+                    if (primary != null) {
+                        const range = worksheet.getRange(primary.startRow, primary.startColumn);
+                        isShrinkToFit = range?.getShrinkToFit();
+                    }
+
+                    subscriber.next(isShrinkToFit === BooleanNumber.TRUE);
+                }
+
+                if (
+                    (id === SetTextSelectionsOperation.id || id === SetInlineFormatCommand.id) &&
+                    contextService.getContextValue(EDITOR_ACTIVATED) &&
+                    (contextService.getContextValue(FOCUSING_SHEET) || contextService.getContextValue(FOCUSING_SHAPE_TEXT_EDITOR))
+                ) {
+                    // Shrink to fit is a cell-level property, not an inline text property.
+                    subscriber.next(false);
+                }
+            });
+
+            const primary = selectionManagerService.getCurrentLastSelection()?.primary;
+            if (!worksheet) {
+                subscriber.next(false);
+                return;
+            }
+
+            let isShrinkToFit = BooleanNumber.FALSE;
+            if (primary != null) {
+                const range = worksheet.getRange(primary.startRow, primary.startColumn);
+                isShrinkToFit = range?.getShrinkToFit();
+            }
+            subscriber.next(isShrinkToFit === BooleanNumber.TRUE);
+
+            return disposable.dispose;
+        })),
+        hidden$: getMenuHiddenObservable(accessor, UniverInstanceType.UNIVER_SHEET),
     };
 }
 

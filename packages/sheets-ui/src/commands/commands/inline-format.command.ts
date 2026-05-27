@@ -15,7 +15,7 @@
  */
 
 import type { ICommand, Workbook } from '@univerjs/core';
-import { CommandType, DEFAULT_STYLES, EDITOR_ACTIVATED, ICommandService, IContextService, IUniverInstanceService, ThemeService, UniverInstanceType } from '@univerjs/core';
+import { BooleanNumber, CommandType, DEFAULT_STYLES, EDITOR_ACTIVATED, ICommandService, IContextService, IUniverInstanceService, ThemeService, UniverInstanceType } from '@univerjs/core';
 import {
     SetInlineFormatBoldCommand,
     SetInlineFormatFontFamilyCommand,
@@ -32,6 +32,7 @@ import {
     SetFontFamilyCommand,
     SetFontSizeCommand,
     SetItalicCommand,
+    SetShrinkToFitCommand,
     SetStrikeThroughCommand,
     SetTextColorCommand,
     SetUnderlineCommand,
@@ -288,6 +289,30 @@ export const ResetRangeTextColorCommand: ICommand = {
 
         return commandService.executeCommand(SetTextColorCommand.id, {
             value: themeService.getColorFromTheme('gray.900'),
+        });
+    },
+};
+
+export const SetRangeShrinkToFitCommand: ICommand = {
+    type: CommandType.COMMAND,
+    id: 'sheet.command.set-range-shrink-to-fit',
+    handler: async (accessor) => {
+        const commandService = accessor.get(ICommandService);
+        const univerInstanceService = accessor.get(IUniverInstanceService);
+        const selectionManagerService = accessor.get(SheetsSelectionsService);
+
+        const workbook = univerInstanceService.getCurrentUnitOfType<Workbook>(UniverInstanceType.UNIVER_SHEET);
+        if (!workbook) return false;
+
+        const worksheet = workbook.getActiveSheet();
+        const primary = selectionManagerService.getCurrentLastSelection()?.primary;
+        if (!primary) return false;
+
+        const range = worksheet.getRange(primary.startRow, primary.startColumn);
+        const currentlyShrinkToFit = range?.getShrinkToFit() === BooleanNumber.TRUE;
+
+        return commandService.executeCommand(SetShrinkToFitCommand.id, {
+            value: currentlyShrinkToFit ? BooleanNumber.FALSE : BooleanNumber.TRUE,
         });
     },
 };

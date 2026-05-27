@@ -302,6 +302,10 @@ export interface IStyleData extends IStyleBase {
      */
     tb?: Nullable<WrapStrategy>;
     /**
+     * shrinkToFit
+     */
+    sh?: Nullable<BooleanNumber>;
+    /**
      * padding
      */
     pd?: Nullable<IPaddingData>;
@@ -329,6 +333,7 @@ export const STYLE_KEYS = defineExactKeys<IStyleData>()([
     'ht',
     'vt',
     'tb',
+    'sh',
     'pd',
 ] as const);
 

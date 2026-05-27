@@ -1124,6 +1124,11 @@ export class SpreadsheetSkeleton extends SheetSkeleton {
      */
     // eslint-disable-next-line complexity, max-lines-per-function
     private _calculateOverflowCell(row: number, column: number, docsConfig: IFontCacheItem): boolean {
+        // Shrink-to-fit cells should not overflow because text is scaled down to fit the cell.
+        if (docsConfig.style?.sh === BooleanNumber.TRUE) {
+            return true;
+        }
+
         // wrap and angle handler
         const { documentSkeleton, vertexAngle = 0, centerAngle = 0, horizontalAlign, wrapStrategy } = docsConfig;
         const cell = this._cellData.getValue(row, column);

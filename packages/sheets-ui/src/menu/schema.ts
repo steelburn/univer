@@ -62,17 +62,7 @@ import {
 import { DeleteRangeMoveLeftConfirmCommand } from '../commands/commands/delete-range-move-left-confirm.command';
 import { DeleteRangeMoveUpConfirmCommand } from '../commands/commands/delete-range-move-up-confirm.command';
 import { HideColConfirmCommand, HideRowConfirmCommand } from '../commands/commands/hide-row-col-confirm.command';
-import {
-    SetRangeBoldCommand,
-    SetRangeFontDecreaseCommand,
-    SetRangeFontFamilyCommand,
-    SetRangeFontIncreaseCommand,
-    SetRangeFontSizeCommand,
-    SetRangeItalicCommand,
-    SetRangeStrickThroughCommand,
-    SetRangeTextColorCommand,
-    SetRangeUnderlineCommand,
-} from '../commands/commands/inline-format.command';
+import { SetRangeBoldCommand, SetRangeFontDecreaseCommand, SetRangeFontFamilyCommand, SetRangeFontIncreaseCommand, SetRangeFontSizeCommand, SetRangeItalicCommand, SetRangeShrinkToFitCommand, SetRangeStrickThroughCommand, SetRangeTextColorCommand, SetRangeUnderlineCommand } from '../commands/commands/inline-format.command';
 import { InsertRangeMoveDownConfirmCommand } from '../commands/commands/insert-range-move-down-confirm.command';
 import { InsertRangeMoveRightConfirmCommand } from '../commands/commands/insert-range-move-right-confirm.command';
 import {
@@ -154,6 +144,7 @@ import {
     SetRowHeightMenuItemFactory,
     ShowColMenuItemFactory,
     ShowRowMenuItemFactory,
+    ShrinkToFitMenuItemFactory,
     StrikeThroughMenuItemFactory,
     TextColorSelectorMenuItemFactory,
     TextRotateMenuItemFactory,
@@ -263,6 +254,10 @@ export const menuSchema: MenuSchemaType = {
             [SetTextWrapCommand.id]: {
                 order: 6,
                 menuItemFactory: WrapTextMenuItemFactory,
+            },
+            [SetRangeShrinkToFitCommand.id]: {
+                order: 6.5,
+                menuItemFactory: ShrinkToFitMenuItemFactory,
             },
             [SetTextRotationCommand.id]: {
                 order: 7,

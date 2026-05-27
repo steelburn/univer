@@ -23,6 +23,7 @@ import type {
     ISetRangeCustomMetadataCommandParams,
     ISetRangeValuesCommandParams,
     ISetSelectionsOperationParams,
+    ISetShrinkToFitCommandParams,
     ISetStyleCommandParams,
     ISetTextRotationCommandParams,
     ISetTextWrapCommandParams,
@@ -54,6 +55,7 @@ import {
     SetRangeCustomMetadataCommand,
     SetRangeValuesCommand,
     SetSelectionsOperation,
+    SetShrinkToFitCommand,
     SetStyleCommand,
     SetTextRotationCommand,
     SetTextWrapCommand,
@@ -911,6 +913,21 @@ export class FRange extends FBaseInitialable {
     }
 
     /**
+     * Returns whether the cell's text is set to shrink to fit.
+     * @returns {BooleanNumber} TRUE if shrink to fit is enabled, FALSE otherwise.
+     * @example
+     * ```ts
+     * const fWorkbook = univerAPI.getActiveWorkbook();
+     * const fWorksheet = fWorkbook.getActiveSheet();
+     * const fRange = fWorksheet.getRange('A1:B2');
+     * console.log(fRange.getShrinkToFit());
+     * ```
+     */
+    getShrinkToFit(): BooleanNumber {
+        return this._worksheet.getRange(this._range).getShrinkToFit();
+    }
+
+    /**
      * Returns the horizontal alignment of the text (left/center/right) of the top-left cell in the range.
      * @returns {string} The horizontal alignment of the text in the cell.
      * @example
@@ -1374,6 +1391,30 @@ export class FRange extends FBaseInitialable {
             range: this._range,
             value: strategy,
         } as ISetTextWrapCommandParams);
+
+        return this;
+    }
+
+    /**
+     * Sets whether the text in the cells should shrink to fit the cell width.
+     * @param {BooleanNumber} shrinkToFit TRUE to enable shrink to fit, FALSE to disable.
+     * @returns {FRange} this range, for chaining
+     * @example
+     * ```ts
+     * const fWorkbook = univerAPI.getActiveWorkbook();
+     * const fWorksheet = fWorkbook.getActiveSheet();
+     * const fRange = fWorksheet.getRange('A1:B2');
+     * fRange.setShrinkToFit(univerAPI.Enum.BooleanNumber.TRUE);
+     * console.log(fRange.getShrinkToFit());
+     * ```
+     */
+    setShrinkToFit(shrinkToFit: BooleanNumber): FRange {
+        this._commandService.syncExecuteCommand(SetShrinkToFitCommand.id, {
+            unitId: this._workbook.getUnitId(),
+            subUnitId: this._worksheet.getSheetId(),
+            range: this._range,
+            value: shrinkToFit,
+        } as ISetShrinkToFitCommandParams);
 
         return this;
     }

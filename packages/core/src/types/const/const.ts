@@ -148,6 +148,10 @@ export const DEFAULT_STYLES = {
      */
     tb: WrapStrategy.UNSPECIFIED,
     /**
+     * shrinkToFit
+     */
+    sh: BooleanNumber.FALSE,
+    /**
      * padding
      */
     pd: {
