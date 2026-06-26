@@ -803,9 +803,9 @@ function useSnapshot() {
       const doc = univerInstanceService.getCurrentUnitOfType(1 /* UNIVER_DOC */);
       const snapshot2 = resourceLoaderService.saveUnit(doc.getUnitId());
       if (true) {
-        const gitHash = "cd9bef7";
+        const gitHash = "ce170b5";
         const gitBranch = "pref/for";
-        const buildTime = "2026-06-26T07:52:48.343Z";
+        const buildTime = "2026-06-26T08:04:34.420Z";
         snapshot2.__env__ = { gitHash, gitBranch, buildTime };
       }
       const text = JSON.stringify(snapshot2, null, 2);
@@ -818,9 +818,9 @@ function useSnapshot() {
     }
     const snapshot = resourceLoaderService.saveUnit(workbook.getUnitId());
     if (true) {
-      const gitHash = "cd9bef7";
+      const gitHash = "ce170b5";
       const gitBranch = "pref/for";
-      const buildTime = "2026-06-26T07:52:48.343Z";
+      const buildTime = "2026-06-26T08:04:34.420Z";
       snapshot.__env__ = { gitHash, gitBranch, buildTime };
     }
     if (value === "sheet") {
