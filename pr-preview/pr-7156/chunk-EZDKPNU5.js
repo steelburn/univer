@@ -1047,7 +1047,7 @@ var FDocumentBody = class {
         isEditing: false
       }
     );
-    return result;
+    return result !== false;
   }
 };
 

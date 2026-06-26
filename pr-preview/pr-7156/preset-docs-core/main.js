@@ -24,7 +24,7 @@ import "../chunk-OEI55YOV.js";
 import {
   UniverNetworkPlugin
 } from "../chunk-PQCDFAR3.js";
-import "../chunk-ZMQGNSOH.js";
+import "../chunk-EZDKPNU5.js";
 import "../chunk-NB7ZYDCP.js";
 import {
   UniverDocsDrawingPlugin,
