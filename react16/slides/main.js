@@ -1,25 +1,25 @@
-import "../chunk-24JL3K42.js";
+import "../chunk-CBMTFXNV.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-7PLIRU2T.js";
+} from "../chunk-RFQTC66U.js";
 import {
   UniverWatermarkPlugin
-} from "../chunk-T2KRPKNM.js";
+} from "../chunk-XMZRHB3U.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
-import "../chunk-7ZBMXBFZ.js";
+import "../chunk-QLDLXFL6.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_SLIDE_DATA,
   ObjectProvider,
   UniverSlidesPlugin,
   loadDebuggerLocale
-} from "../chunk-EV3CEHCV.js";
-import "../chunk-L64RJH2T.js";
-import "../chunk-G4H3SV5A.js";
+} from "../chunk-5UW7MU4X.js";
+import "../chunk-FCJ3BJNP.js";
+import "../chunk-LLCIHVKC.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-O7UOHNOS.js";
+import "../chunk-6BRE7BU4.js";
 import {
   DOCS_COMPONENT_MAIN_LAYER_INDEX,
   DRAWING_IMAGE_ALLOW_IMAGE_LIST,
@@ -35,7 +35,7 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getImageSize
-} from "../chunk-HKBJ7D45.js";
+} from "../chunk-WZAAH4KX.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -74,14 +74,14 @@ import {
   scrollbarClassName,
   useDependency,
   useObservable
-} from "../chunk-C7KTYNCZ.js";
+} from "../chunk-WATNN632.js";
 import "../chunk-2FVEG47S.js";
-import "../chunk-56NGTYAW.js";
+import "../chunk-7FCCOEOP.js";
 import "../chunk-GNAKMJK7.js";
-import "../chunk-ZZ4GQ3KO.js";
+import "../chunk-MAKLEPR2.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-YC3KISDR.js";
+} from "../chunk-LOT2R2OM.js";
 import {
   BehaviorSubject,
   DEFAULT_EMPTY_DOCUMENT_VALUE,
@@ -131,7 +131,7 @@ import {
   pxToNum,
   takeUntil,
   toDisposable
-} from "../chunk-S6MVWVUZ.js";
+} from "../chunk-K4NPP4YC.js";
 import "../chunk-EQ2B2W73.js";
 import {
   __decorateClass,
@@ -2818,12 +2818,11 @@ function transformPosition2Offset(x, y, scene) {
   };
 }
 var SlideCanvasPopMangerService = class extends Disposable {
-  constructor(_globalPopupManagerService, _renderManagerService, _univerInstanceService, _commandService) {
+  constructor(_globalPopupManagerService, _renderManagerService, _univerInstanceService) {
     super();
     __publicField(this, "_globalPopupManagerService", _globalPopupManagerService);
     __publicField(this, "_renderManagerService", _renderManagerService);
     __publicField(this, "_univerInstanceService", _univerInstanceService);
-    __publicField(this, "_commandService", _commandService);
   }
   _createObjectPositionObserver(targetObject, currentRender) {
     const calc = () => {
@@ -2893,8 +2892,7 @@ var SlideCanvasPopMangerService = class extends Disposable {
 SlideCanvasPopMangerService = __decorateClass([
   __decorateParam(0, Inject(ICanvasPopupService)),
   __decorateParam(1, IRenderManagerService),
-  __decorateParam(2, IUniverInstanceService),
-  __decorateParam(3, ICommandService)
+  __decorateParam(2, IUniverInstanceService)
 ], SlideCanvasPopMangerService);
 
 // ../packages/slides-ui/src/menu/popup-menu.controller.ts
@@ -3036,9 +3034,8 @@ SlidePopupMenuController = __decorateClass([
 // ../packages/slides-ui/src/services/slide-render.service.ts
 var SlideRenderService = class extends RxDisposable {
   // private _skeletonChangeMutations = new Set<string>();
-  constructor(_contextService, _instanceSrv, _renderManagerService) {
+  constructor(_instanceSrv, _renderManagerService) {
     super();
-    __publicField(this, "_contextService", _contextService);
     __publicField(this, "_instanceSrv", _instanceSrv);
     __publicField(this, "_renderManagerService", _renderManagerService);
     Promise.resolve().then(() => this._init());
@@ -3074,9 +3071,8 @@ var SlideRenderService = class extends RxDisposable {
   }
 };
 SlideRenderService = __decorateClass([
-  __decorateParam(0, IContextService),
-  __decorateParam(1, IUniverInstanceService),
-  __decorateParam(2, IRenderManagerService)
+  __decorateParam(0, IUniverInstanceService),
+  __decorateParam(1, IRenderManagerService)
 ], SlideRenderService);
 
 // ../packages/slides-ui/src/plugin.ts

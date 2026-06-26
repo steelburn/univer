@@ -1,39 +1,39 @@
-import "../chunk-24JL3K42.js";
+import "../chunk-CBMTFXNV.js";
 import {
   UniverDocsMentionUIPlugin
-} from "../chunk-WW6Q57JG.js";
+} from "../chunk-YF3AHOR5.js";
 import {
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-B3CKRVO4.js";
-import "../chunk-6ATIVTJQ.js";
+} from "../chunk-VKJD7RPW.js";
+import "../chunk-SZABEXV6.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-BMQFJKY2.js";
+} from "../chunk-4V3HPYFU.js";
 import {
   UniverWatermarkPlugin
-} from "../chunk-T2KRPKNM.js";
+} from "../chunk-XMZRHB3U.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
 import {
   InsertDocImageCommand,
   UniverDocsDrawingUIPlugin
-} from "../chunk-7ZBMXBFZ.js";
+} from "../chunk-QLDLXFL6.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE,
   loadDebuggerLocale
-} from "../chunk-EV3CEHCV.js";
-import "../chunk-L64RJH2T.js";
-import "../chunk-G4H3SV5A.js";
+} from "../chunk-5UW7MU4X.js";
+import "../chunk-FCJ3BJNP.js";
+import "../chunk-LLCIHVKC.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-Z37LGIL3.js";
-import "../chunk-UXRKAF4B.js";
+import "../chunk-K6AYPAKU.js";
+import "../chunk-6PEYLUFM.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-O7UOHNOS.js";
+} from "../chunk-6BRE7BU4.js";
 import {
   BulletListCommand,
   CutContentCommand,
@@ -55,7 +55,7 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getAnchorBounding
-} from "../chunk-HKBJ7D45.js";
+} from "../chunk-WZAAH4KX.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -77,16 +77,16 @@ import {
   useDependency,
   useEvent,
   useObservable
-} from "../chunk-C7KTYNCZ.js";
+} from "../chunk-WATNN632.js";
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
-} from "../chunk-56NGTYAW.js";
+} from "../chunk-7FCCOEOP.js";
 import "../chunk-GNAKMJK7.js";
-import "../chunk-ZZ4GQ3KO.js";
+import "../chunk-MAKLEPR2.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-YC3KISDR.js";
+} from "../chunk-LOT2R2OM.js";
 import {
   BehaviorSubject,
   DependentOn,
@@ -112,7 +112,7 @@ import {
   ptToPixel,
   tap,
   toDisposable
-} from "../chunk-S6MVWVUZ.js";
+} from "../chunk-K4NPP4YC.js";
 import "../chunk-EQ2B2W73.js";
 import {
   __decorateClass,
@@ -848,25 +848,24 @@ var DocQuickInsertTriggerController = class extends Disposable {
       // eslint-disable-next-line complexity, max-lines-per-function
       this._commandService.onCommandExecuted((commandInfo) => {
         var _a, _b, _c;
-        const { _docQuickInsertPopupService, _textSelectionManagerService, _commandService } = this;
         const documentDataModel = this._univerInstanceService.getCurrentUnitOfType(1 /* UNIVER_DOC */);
         if (documentDataModel == null ? void 0 : documentDataModel.getDisabled()) {
           return;
         }
         if (commandInfo.id === InsertTextCommand.id) {
           const params = commandInfo.params;
-          if (_docQuickInsertPopupService.editPopup) {
-            _docQuickInsertPopupService.setInputOffset({
-              start: _docQuickInsertPopupService.inputOffset.start,
+          if (this._docQuickInsertPopupService.editPopup) {
+            this._docQuickInsertPopupService.setInputOffset({
+              start: this._docQuickInsertPopupService.inputOffset.start,
               end: params.range.endOffset + 1
             });
             return;
           }
-          const activeRange = _textSelectionManagerService.getActiveTextRange();
+          const activeRange = this._textSelectionManagerService.getActiveTextRange();
           if (!activeRange) {
             return;
           }
-          const popup = _docQuickInsertPopupService.resolvePopup(params.body.dataStream);
+          const popup = this._docQuickInsertPopupService.resolvePopup(params.body.dataStream);
           if (!popup) {
             return;
           }
@@ -874,9 +873,9 @@ var DocQuickInsertTriggerController = class extends Disposable {
           if (!available) {
             return;
           }
-          _docQuickInsertPopupService.setInputOffset({ start: activeRange.startOffset - 1, end: activeRange.startOffset });
+          this._docQuickInsertPopupService.setInputOffset({ start: activeRange.startOffset - 1, end: activeRange.startOffset });
           setTimeout(() => {
-            _commandService.executeCommand(ShowQuickInsertPopupOperation.id, {
+            this._commandService.executeCommand(ShowQuickInsertPopupOperation.id, {
               index: activeRange.startOffset - 1,
               unitId: params.unitId,
               popup
@@ -885,11 +884,11 @@ var DocQuickInsertTriggerController = class extends Disposable {
         }
         if (commandInfo.id === IMEInputCommand.id) {
           const params = commandInfo.params;
-          if (!_docQuickInsertPopupService.isComposing && params.isCompositionStart) {
-            _docQuickInsertPopupService.setIsComposing(true);
+          if (!this._docQuickInsertPopupService.isComposing && params.isCompositionStart) {
+            this._docQuickInsertPopupService.setIsComposing(true);
           }
-          if (_docQuickInsertPopupService.isComposing && params.isCompositionEnd) {
-            _docQuickInsertPopupService.setIsComposing(false);
+          if (this._docQuickInsertPopupService.isComposing && params.isCompositionEnd) {
+            this._docQuickInsertPopupService.setIsComposing(false);
           }
         }
         if (commandInfo.id === RichTextEditingMutation.id) {
@@ -897,30 +896,30 @@ var DocQuickInsertTriggerController = class extends Disposable {
           if (params.isCompositionEnd) {
             const endOffset = (_b = (_a = params.textRanges) == null ? void 0 : _a[0]) == null ? void 0 : _b.endOffset;
             if (endOffset) {
-              _docQuickInsertPopupService.setInputOffset({ start: _docQuickInsertPopupService.inputOffset.start, end: endOffset });
+              this._docQuickInsertPopupService.setInputOffset({ start: this._docQuickInsertPopupService.inputOffset.start, end: endOffset });
             }
           }
         }
         if (commandInfo.id === DeleteTextCommand.id) {
           const params = commandInfo.params;
-          if (_docQuickInsertPopupService.editPopup && params.direction === 0 /* LEFT */) {
+          if (this._docQuickInsertPopupService.editPopup && params.direction === 0 /* LEFT */) {
             const len = (_c = params.len) != null ? _c : 0;
-            _docQuickInsertPopupService.setInputOffset({ start: _docQuickInsertPopupService.inputOffset.start, end: params.range.endOffset - len });
+            this._docQuickInsertPopupService.setInputOffset({ start: this._docQuickInsertPopupService.inputOffset.start, end: params.range.endOffset - len });
           }
         }
         if (commandInfo.id === MoveCursorOperation.id) {
           const params = commandInfo.params;
           if (params.direction === 3 /* LEFT */ || params.direction === 1 /* RIGHT */) {
-            _docQuickInsertPopupService.editPopup && _commandService.executeCommand(CloseQuickInsertPopupOperation.id);
+            this._docQuickInsertPopupService.editPopup && this._commandService.executeCommand(CloseQuickInsertPopupOperation.id);
           }
         }
         if (commandInfo.id === DeleteLeftCommand.id) {
-          const activeRange = _textSelectionManagerService.getActiveTextRange();
-          if (!_docQuickInsertPopupService.editPopup || !activeRange) {
+          const activeRange = this._textSelectionManagerService.getActiveTextRange();
+          if (!this._docQuickInsertPopupService.editPopup || !activeRange) {
             return;
           }
-          if (activeRange.endOffset <= _docQuickInsertPopupService.editPopup.anchor) {
-            _commandService.executeCommand(CloseQuickInsertPopupOperation.id);
+          if (activeRange.endOffset <= this._docQuickInsertPopupService.editPopup.anchor) {
+            this._commandService.executeCommand(CloseQuickInsertPopupOperation.id);
           }
         }
       })
