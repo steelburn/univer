@@ -1,7 +1,7 @@
 import {
   zh_CN_default,
   zh_CN_default2
-} from "../chunk-GQUCUDLC.js";
+} from "../chunk-A3LR6BSI.js";
 import {
   createUniver
 } from "../chunk-FPAQ3IWY.js";
@@ -10,7 +10,7 @@ import {
 } from "../chunk-DYNPPXJ5.js";
 import "../chunk-2FVEG47S.js";
 import "../chunk-ZEVVNN57.js";
-import "../chunk-2236G4QD.js";
+import "../chunk-GNAKMJK7.js";
 import {
   UniverRemoteSheetsFormulaPlugin
 } from "../chunk-YFJR3M5H.js";

@@ -773,6 +773,9 @@
 .univer-h-\[30px\] {
   height: 30px;
 }
+.univer-h-\[340px\] {
+  height: 340px;
+}
 .univer-h-\[364px\] {
   height: 364px;
 }
@@ -1018,6 +1021,9 @@
 }
 .univer-w-\[400px\] {
   width: 400px;
+}
+.univer-w-\[420px\] {
+  width: 420px;
 }
 .univer-w-\[45\%\] {
   width: 45%;
@@ -1319,6 +1325,9 @@
 }
 .univer-grid-flow-col {
   grid-auto-flow: column;
+}
+.univer-grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 .univer-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2102,6 +2111,10 @@
 .univer-py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+.univer-py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 .\!univer-pl-4 {
   padding-left: 1rem !important;
@@ -3083,6 +3096,9 @@
 .hover\:univer-border-gray-300:hover {
   border-color: var(--univer-gray-300);
 }
+.hover\:univer-border-gray-400:hover {
+  border-color: var(--univer-gray-400);
+}
 .hover\:univer-border-primary-500:hover {
   border-color: var(--univer-primary-500);
 }
@@ -3132,6 +3148,9 @@
 }
 .hover\:univer-text-gray-500:hover {
   color: var(--univer-gray-500);
+}
+.hover\:univer-text-gray-700:hover {
+  color: var(--univer-gray-700);
 }
 .hover\:univer-text-gray-900:hover {
   color: var(--univer-gray-900);
@@ -3417,6 +3436,9 @@
 .dark\:\!univer-border-gray-700:where(.univer-dark, .univer-dark *) {
   border-color: var(--univer-gray-700) !important;
 }
+.dark\:\!univer-border-primary-600:where(.univer-dark, .univer-dark *) {
+  border-color: var(--univer-primary-600) !important;
+}
 .dark\:\!univer-border-primary-700:where(.univer-dark, .univer-dark *) {
   border-color: var(--univer-primary-700) !important;
 }
@@ -3537,6 +3559,14 @@
 .dark\:\!univer-text-white:where(.univer-dark, .univer-dark *) {
   color: var(--univer-white) !important;
 }
+.dark\:\!univer-shadow-sm:where(.univer-dark, .univer-dark *) {
+  --tw-shadow: 0px 1px 2px 0px rgba(30, 40, 77, 0.08) !important;
+  --tw-shadow-colored: 0px 1px 2px 0px var(--tw-shadow-color) !important;
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow) !important;
+}
 .dark\:\!univer-ring-primary-600:where(.univer-dark, .univer-dark *) {
   --tw-ring-color: var(--univer-primary-600) !important;
 }
@@ -3579,6 +3609,9 @@
 }
 .dark\:hover\:\!univer-bg-transparent:hover:where(.univer-dark, .univer-dark *) {
   background-color: transparent !important;
+}
+.dark\:hover\:\!univer-text-gray-300:hover:where(.univer-dark, .univer-dark *) {
+  color: var(--univer-gray-300) !important;
 }
 .dark\:hover\:\!univer-text-white:hover:where(.univer-dark, .univer-dark *) {
   color: var(--univer-white) !important;
@@ -4168,6 +4201,10 @@
 .\[\&_svg\]\:univer-size-4 svg {
   width: 1rem;
   height: 1rem;
+}
+.\[\&_svg\]\:univer-size-5 svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 .\[\&_svg\]\:univer-shrink-0 svg {
   flex-shrink: 0;
