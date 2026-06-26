@@ -9,7 +9,7 @@ import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin,
   getDocDrawingRenderOrder
-} from "./chunk-STCQE6Z4.js";
+} from "./chunk-RXD22XQH.js";
 import {
   DOC_CONTENT_INSERT_MENU_ID,
   DOC_PARAGRAPH_T_INSERT_BELOW_MENU_ID,
@@ -2573,7 +2573,7 @@ var DocDrawingTransformUpdateController = class extends Disposable {
         clipOffsetTop: clipOffset == null ? void 0 : clipOffset.top,
         page: clipPage
       });
-      const pageRelativeAnchorPage = getDocsPageRelativeDrawingAnchorPage({
+      const pageRelativeAnchorPage = drawingOrigin.layoutType === 0 /* INLINE */ ? void 0 : getDocsPageRelativeDrawingAnchorPage({
         page,
         clipPage,
         hostPage

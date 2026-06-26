@@ -9,7 +9,7 @@ import {
 import "../chunk-VS5OMID2.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-5XBH5N6B.js";
+} from "../chunk-OTKWRFOG.js";
 import {
   UniverWatermarkPlugin
 } from "../chunk-R7JMNSZ5.js";
@@ -19,13 +19,13 @@ import {
 import {
   InsertDocImageCommand,
   UniverDocsDrawingUIPlugin
-} from "../chunk-T6PWQ5IE.js";
+} from "../chunk-PQBZWCFW.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE,
   loadDebuggerLocale
 } from "../chunk-BD6DCNSI.js";
-import "../chunk-YNXSA36Q.js";
+import "../chunk-2BJAGHVD.js";
 import "../chunk-UGYUBKCY.js";
 import "../chunk-O4CRIMVC.js";
 import "../chunk-F2DPW75V.js";
@@ -33,7 +33,7 @@ import "../chunk-2QNOHHER.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-STCQE6Z4.js";
+} from "../chunk-RXD22XQH.js";
 import {
   BulletListCommand,
   CutContentCommand,

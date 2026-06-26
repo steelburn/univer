@@ -11,7 +11,7 @@ import {
 } from "../chunk-PCJP4G2Q.js";
 import {
   UniverDocsDrawingUIPlugin
-} from "../chunk-T6PWQ5IE.js";
+} from "../chunk-PQBZWCFW.js";
 import {
   zh_CN_default as zh_CN_default2,
   zh_CN_default2 as zh_CN_default3,
@@ -29,7 +29,7 @@ import "../chunk-2QNOHHER.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-STCQE6Z4.js";
+} from "../chunk-RXD22XQH.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin,

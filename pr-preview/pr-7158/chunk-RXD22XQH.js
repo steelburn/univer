@@ -965,7 +965,7 @@ var DrawingRenderService = class {
       adjustValues,
       hidden
     } = imageParam;
-    const { docxHeaderFooterDrawing } = imageParam;
+    const { docxHeaderFooterDrawing, layoutType } = imageParam;
     if (drawingType !== 0 /* DRAWING_IMAGE */) {
       return;
     }
@@ -1022,7 +1022,7 @@ var DrawingRenderService = class {
           shouldBeCache = true;
         }
       }
-      const shouldWaitForInlineTransform = docxHeaderFooterDrawing === true && imageParam.layoutType === 0 /* INLINE */;
+      const shouldWaitForInlineTransform = docxHeaderFooterDrawing === true && layoutType === 0 /* INLINE */;
       if (hidden || shouldWaitForInlineTransform) {
         imageConfig.visible = false;
       }

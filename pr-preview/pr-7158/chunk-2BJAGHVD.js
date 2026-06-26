@@ -25,7 +25,7 @@ import {
   OpenImageCropOperation,
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "./chunk-STCQE6Z4.js";
+} from "./chunk-RXD22XQH.js";
 import {
   DRAWING_IMAGE_ALLOW_IMAGE_LIST,
   DRAWING_IMAGE_COUNT_LIMIT,

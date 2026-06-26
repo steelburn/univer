@@ -9,12 +9,12 @@ import {
 } from "../chunk-EJGXZY7A.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-5XBH5N6B.js";
+} from "../chunk-OTKWRFOG.js";
 import "../chunk-R7JMNSZ5.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
-import "../chunk-T6PWQ5IE.js";
+import "../chunk-PQBZWCFW.js";
 import "../chunk-DBRQB4K6.js";
 import {
   UNISCRIT_WORKBOOK_DATA_DEMO,
@@ -23,12 +23,12 @@ import {
 import {
   UniverSheetsNumfmtPlugin
 } from "../chunk-XKV6PVIN.js";
-import "../chunk-YNXSA36Q.js";
+import "../chunk-2BJAGHVD.js";
 import {
   UniverSheetsUIPlugin
 } from "../chunk-UGYUBKCY.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-STCQE6Z4.js";
+import "../chunk-RXD22XQH.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin
