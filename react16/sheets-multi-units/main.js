@@ -3,20 +3,20 @@ import {
 } from "../chunk-ZYSQH7ON.js";
 import {
   UniverSheetsThreadCommentUIPlugin
-} from "../chunk-MSJYTC6L.js";
+} from "../chunk-ZU2PXV7Q.js";
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-QITBPQXN.js";
+} from "../chunk-EYES5V7T.js";
 import {
   UniverThreadCommentUIPlugin
 } from "../chunk-5335NU4L.js";
-import "../chunk-CKXOVEM5.js";
-import "../chunk-ASO6N5L4.js";
+import "../chunk-O4SGEKFP.js";
+import "../chunk-PALPWRNK.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
 import "../chunk-DBRQB4K6.js";
-import "../chunk-EEW5RZWK.js";
+import "../chunk-ASET3SEV.js";
 import "../chunk-GXFEQBBI.js";
 import {
   UniverSheetsThreadCommentPlugin
@@ -24,7 +24,7 @@ import {
 import "../chunk-QYRZCRUN.js";
 import {
   UniverSheetsHyperLinkPlugin
-} from "../chunk-YJKAL4VB.js";
+} from "../chunk-RER4WIKX.js";
 import {
   UniverSheetsSortPlugin
 } from "../chunk-VFBTU3R4.js";
@@ -33,14 +33,14 @@ import {
 } from "../chunk-GOZC7HS6.js";
 import {
   UniverSheetsFormulaUIPlugin
-} from "../chunk-VTB53UC4.js";
+} from "../chunk-LBL4PQJH.js";
 import {
   UniverSheetsNumfmtPlugin
 } from "../chunk-PJC5Q3Y6.js";
-import "../chunk-7QG7N2FI.js";
+import "../chunk-HJ27K5PV.js";
 import {
   UniverSheetsUIPlugin
-} from "../chunk-K7GTW7JU.js";
+} from "../chunk-NN5RA2IS.js";
 import "../chunk-O4CRIMVC.js";
 import "../chunk-H6OXEYL5.js";
 import "../chunk-PDVUKZV5.js";
@@ -184,13 +184,13 @@ var injector = univer.__getInjector();
 var userManagerService = injector.get(UserManagerService);
 userManagerService.setCurrentUser(mockUser);
 setTimeout(() => {
-  import("../lazy-5PZTPP5E.js").then((lazy) => {
+  import("../lazy-B6QKCLRH.js").then((lazy) => {
     const plugins = lazy.default();
     plugins.forEach((p) => univer.registerPlugin(p[0], p[1]));
   });
 }, LOAD_LAZY_PLUGINS_TIMEOUT);
 setTimeout(() => {
-  import("../very-lazy-5L3G4PCU.js").then((lazy) => {
+  import("../very-lazy-T5YBCHJY.js").then((lazy) => {
     const plugins = lazy.default();
     plugins.forEach((p) => univer.registerPlugin(p[0], p[1]));
   });
