@@ -4,12 +4,12 @@ import {
 import {
   UniverSheetsNoteUIPlugin,
   UniverSheetsTableUIPlugin
-} from "./chunk-XPJRZZPH.js";
+} from "./chunk-QMUBDQSI.js";
 import {
   UniverSheetsConditionalFormattingUIPlugin,
   UniverSheetsDataValidationUIPlugin,
   UniverSheetsFilterUIPlugin
-} from "./chunk-IYZRLLVJ.js";
+} from "./chunk-I5QE34Q4.js";
 import {
   UniverSheetsThreadCommentUIPlugin
 } from "./chunk-MSJYTC6L.js";
@@ -25,7 +25,7 @@ import "./chunk-VFBTU3R4.js";
 import "./chunk-GOZC7HS6.js";
 import {
   UniverSheetsFormulaUIPlugin
-} from "./chunk-J4PAFPML.js";
+} from "./chunk-VTB53UC4.js";
 import "./chunk-PJC5Q3Y6.js";
 import {
   UniverSheetsDrawingUIPlugin

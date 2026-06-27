@@ -10,7 +10,7 @@ import {
 } from "../chunk-PIT7SCDY.js";
 import {
   UniverSheetsFormulaUIPlugin
-} from "../chunk-J4PAFPML.js";
+} from "../chunk-VTB53UC4.js";
 import {
   UniverSheetsNumfmtPlugin
 } from "../chunk-PJC5Q3Y6.js";

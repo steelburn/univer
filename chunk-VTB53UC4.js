@@ -1438,6 +1438,9 @@ function genFormulaRefSelectionStyle(themeService, refColor, id) {
 }
 
 // ../packages/sheets-formula-ui/src/views/formula-editor/hooks/use-highlight.ts
+function isSameSelectionRange(left, right) {
+  return !!left && left.startRow === right.startRow && left.startColumn === right.startColumn && left.endRow === right.endRow && left.endColumn === right.endColumn && (!left.sheetId || !right.sheetId || left.sheetId === right.sheetId) && (!left.unitId || !right.unitId || left.unitId === right.unitId);
+}
 function calcHighlightRanges(opts) {
   var _a, _b;
   const {
@@ -1469,6 +1472,22 @@ function calcHighlightRanges(opts) {
   if (!skeleton) return;
   const endIndexes = [];
   const currentSelections = refSelectionsService.getCurrentSelections();
+  const matchedCurrentSelectionIndexes = /* @__PURE__ */ new Set();
+  const getPrimaryForRange = (range, fallbackIndex) => {
+    const currentSelection = currentSelections[fallbackIndex];
+    if (isSameSelectionRange(currentSelection == null ? void 0 : currentSelection.range, range)) {
+      matchedCurrentSelectionIndexes.add(fallbackIndex);
+      return currentSelection.primary;
+    }
+    const matchedIndex = currentSelections.findIndex(
+      (selection, index) => !matchedCurrentSelectionIndexes.has(index) && isSameSelectionRange(selection.range, range)
+    );
+    if (matchedIndex !== -1) {
+      matchedCurrentSelectionIndexes.add(matchedIndex);
+      return currentSelections[matchedIndex].primary;
+    }
+    return void 0;
+  };
   for (let i = 0, len = refSelections.length; i < len; i++) {
     const refSelection = refSelections[i];
     const { themeColor, token, refIndex, endIndex } = refSelection;
@@ -1490,10 +1509,9 @@ function calcHighlightRanges(opts) {
     const range = setEndForRange(rawRange, worksheet.getRowCount(), worksheet.getColumnCount());
     range.unitId = unitId;
     range.sheetId = currentSheetId;
-    const currentSelection = currentSelections[selectionWithStyle.length];
     selectionWithStyle.push({
       range,
-      primary: currentSelection ? currentSelection.primary : void 0,
+      primary: getPrimaryForRange(range, selectionWithStyle.length),
       style: genFormulaRefSelectionStyle(themeService, themeColor, refIndex.toString())
     });
     endIndexes.push(endIndex);
