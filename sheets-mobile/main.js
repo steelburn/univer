@@ -2,55 +2,58 @@ import {
   UniverSheetsConditionalFormattingMobileUIPlugin,
   UniverSheetsDataValidationMobileUIPlugin,
   UniverSheetsFilterMobileUIPlugin
-} from "../chunk-DYR27BI3.js";
-import "../chunk-QUHIKIEB.js";
-import {
-  UniverSheetsFilterPlugin
-} from "../chunk-EIAWKFP7.js";
+} from "../chunk-E6P6HZ6Z.js";
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-OJDH3EIP.js";
+} from "../chunk-A3UKNXOM.js";
 import {
-  UniverSheetsFormulaUIPlugin
-} from "../chunk-TKJ44BLP.js";
-import {
-  UniverSheetsNumfmtPlugin
-} from "../chunk-CDKUTHSD.js";
-import {
-  UniverSheetsMobileUIPlugin
-} from "../chunk-6MBQ2LW4.js";
+  zh_CN_default
+} from "../chunk-2LAJUHX4.js";
+import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_WORKBOOK_DATA_DEMO
-} from "../chunk-WY5SBACQ.js";
+} from "../chunk-KQO45UGS.js";
+import "../chunk-MR7OSKRT.js";
+import {
+  UniverSheetsFormulaUIPlugin
+} from "../chunk-FW5I6O3S.js";
+import {
+  UniverSheetsNumfmtPlugin
+} from "../chunk-OGX7UMKT.js";
+import {
+  UniverSheetsMobileUIPlugin
+} from "../chunk-OWNWYWPL.js";
+import "../chunk-O4CRIMVC.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin,
   UniverSheetsDataValidationPlugin
-} from "../chunk-GMQ4GLVG.js";
+} from "../chunk-DOP4XK2T.js";
+import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
   UniverMobileUIPlugin
-} from "../chunk-TWPETBMX.js";
+} from "../chunk-WATNN632.js";
 import {
-  zh_CN_default
-} from "../chunk-IPDBHQ7H.js";
+  UniverSheetsFilterPlugin
+} from "../chunk-KSKNLR7K.js";
+import "../chunk-2FVEG47S.js";
+import "../chunk-GNAKMJK7.js";
 import {
   UniverSheetsFormulaPlugin
-} from "../chunk-JPAQCREO.js";
+} from "../chunk-LOCMHYVK.js";
 import {
   UniverFormulaEnginePlugin,
   UniverRPCMainThreadPlugin,
   UniverSheetsPlugin
-} from "../chunk-E7MFA523.js";
-import {
-  UniverRenderEnginePlugin
-} from "../chunk-XDSNGS3M.js";
+} from "../chunk-TJVV3XAG.js";
 import {
   Univer,
+  UniverRenderEnginePlugin,
   UserManagerService
-} from "../chunk-JD4X33BA.js";
+} from "../chunk-K4NPP4YC.js";
 import "../chunk-EQ2B2W73.js";
-import "../chunk-24OICD5T.js";
+import "../chunk-HECJ2TYE.js";
 
 // src/sheets-mobile/main.ts
 var univer = new Univer({

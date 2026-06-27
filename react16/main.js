@@ -5,24 +5,23 @@ import {
   render,
   require_jsx_runtime,
   require_react
-} from "./chunk-TWPETBMX.js";
-import "./chunk-XDSNGS3M.js";
+} from "./chunk-WATNN632.js";
 import {
   default_default
-} from "./chunk-JD4X33BA.js";
+} from "./chunk-K4NPP4YC.js";
 import "./chunk-EQ2B2W73.js";
 import {
   __toESM
-} from "./chunk-24OICD5T.js";
+} from "./chunk-HECJ2TYE.js";
 
 // src/main.tsx
-var import_react = __toESM(require_react());
+var import_react = __toESM(require_react(), 1);
 
 // ../package.json
 var package_default = {
   name: "univer",
   type: "module",
-  version: "0.25.1",
+  version: "1.0.0-alpha.0",
   private: true,
   packageManager: "pnpm@10.33.4",
   author: "DreamNum Co., Ltd. <developer@univer.ai>",
@@ -57,65 +56,62 @@ var package_default = {
     dev: "pnpm --filter univer-examples dev:demo -- --host 0.0.0.0",
     "dev:umd": "serve .",
     "dev:e2e": "pnpm --filter univer-examples dev:e2e",
-    "use:react16": "tsx ./scripts/react-version-manager.ts --react=16",
-    "use:react19": "tsx ./scripts/react-version-manager.ts --react=19",
+    "use:react16": "node --experimental-strip-types ./scripts/react-version-manager.mts --react=16",
+    "use:react19": "node --experimental-strip-types ./scripts/react-version-manager.mts --react=19",
     typecheck: "turbo typecheck",
     "serve:umd": "serve .",
     test: "turbo test -- --passWithNoTests",
-    coverage: "turbo coverage -- --passWithNoTests",
-    "analyze:build": "tsx ./scripts/build-analysis.ts",
-    build: "turbo build --filter=!./common/*",
-    "build:ci": "turbo build --filter=!./common/*",
+    coverage: "turbo --concurrency 50% coverage -- --passWithNoTests ",
+    "analyze:build": "node --experimental-strip-types ./scripts/build-analysis.mts",
+    build: "pnpm run build:plugins && pnpm run build:presets",
+    "build:ci": "pnpm run build",
+    "build:plugins": "turbo build --filter '!./common/*' --filter '!./presets/**'",
+    "build:presets": "turbo build --filter './presets/**...' --filter '!./presets/**' && turbo build --filter './presets/**'",
     "build:demo": "pnpm --filter univer-examples build:demo",
-    "build:e2e": "pnpm --filter univer-examples build:e2e",
+    "build:e2e": "turbo build:e2e --filter univer-examples",
     "serve:e2e": "serve ./examples/local",
     "test:e2e": "playwright test",
     lint: "eslint .",
     "storybook:dev": "pnpm --filter @univerjs/storybook dev:storybook",
     "storybook:build": "pnpm --filter @univerjs/storybook build:storybook",
-    release: "release-it"
+    release: "verso"
   },
   devDependencies: {
-    "@antfu/eslint-config": "^7.7.3",
-    "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.3",
-    "@eslint-react/eslint-plugin": "^2.13.0",
-    "@eslint/compat": "^2.0.5",
+    "@antfu/eslint-config": "^9.0.0",
+    "@commitlint/cli": "^21.1.0",
+    "@commitlint/config-conventional": "^21.1.0",
+    "@eslint-react/eslint-plugin": "^5.9.1",
+    "@eslint/compat": "^2.1.0",
     "@playwright/test": "^1.57.0",
-    "@release-it-plugins/workspaces": "^5.0.3",
-    "@release-it/conventional-changelog": "^10.0.6",
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^25.9.1",
-    "@types/react": "19.2.15",
+    "@types/node": "^26.0.0",
+    "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@univerjs-infra/shared": "workspace:*",
     "@univerjs/design": "workspace:*",
-    eslint: "10.4.1",
+    "@univerkit/verso": "1.0.0-beta.0",
+    eslint: "^10.5.0",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "fs-extra": "^11.3.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
     husky: "^9.1.7",
-    "lint-staged": "^17.0.5",
-    "posthog-node": "^5.35.6",
-    react: "19.2.6",
-    "react-dom": "19.2.6",
-    "release-it": "^19.2.4",
+    "lint-staged": "^17.0.8",
+    "posthog-node": "^5.38.5",
+    react: "19.2.7",
+    "react-dom": "19.2.7",
     serve: "^14.2.6",
     tailwindcss: "3.4.18",
-    tsx: "^4.22.3",
-    turbo: "^2.9.16",
+    turbo: "^2.10.0",
     typescript: "^6.0.3",
-    vitest: "^4.1.7"
+    vitest: "^4.1.9"
   },
   pnpm: {
     overrides: {
-      "@types/react": "19.2.15",
+      "@types/react": "19.2.17",
       "@types/react-dom": "19.2.3",
       "basic-ftp": "5.2.0",
-      react: "19.2.6",
-      "react-dom": "19.2.6"
+      react: "19.2.7",
+      "react-dom": "19.2.7"
     }
   },
   "lint-staged": {
@@ -140,6 +136,21 @@ var demos = [
     "dir": "docs-uniscript",
     "href": "./docs-uniscript/",
     "title": "Docs Uniscript"
+  },
+  {
+    "dir": "preset-docs-core",
+    "href": "./preset-docs-core/",
+    "title": "Preset Docs Core"
+  },
+  {
+    "dir": "preset-sheets-core",
+    "href": "./preset-sheets-core/",
+    "title": "Preset Sheets Core"
+  },
+  {
+    "dir": "preset-sheets-core-with-worker",
+    "href": "./preset-sheets-core-with-worker/",
+    "title": "Preset Sheets Core With Worker"
   },
   {
     "dir": "sheets",
@@ -189,7 +200,7 @@ var demos = [
 ];
 
 // src/main.tsx
-var import_jsx_runtime = __toESM(require_jsx_runtime());
+var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var CATEGORY_ORDER = ["sheets", "docs", "slides", "others"];
 var PRIMARY_CATEGORY_ORDER = ["sheets", "docs", "slides"];
 var CATEGORY_TITLES = {
@@ -225,11 +236,11 @@ if (true) {
     // eslint-disable-next-line node/prefer-global/process
     NODE_ENV: "production",
     // eslint-disable-next-line node/prefer-global/process
-    GIT_COMMIT_HASH: "c9c8607",
+    GIT_COMMIT_HASH: "ad81d27",
     // eslint-disable-next-line node/prefer-global/process
-    GIT_REF_NAME: "v0.25.1",
+    GIT_REF_NAME: "dev",
     // eslint-disable-next-line node/prefer-global/process
-    BUILD_TIME: "2026-06-27T03:23:27.306Z"
+    BUILD_TIME: "2026-06-27T03:27:26.109Z"
   });
 }
 function DemoList({ items }) {

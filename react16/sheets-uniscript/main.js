@@ -1,53 +1,59 @@
 import {
   UniverUniscriptPlugin
-} from "../chunk-VJQPCSLJ.js";
-import "../chunk-GCGI23F5.js";
-import "../chunk-CQY74AWC.js";
-import "../chunk-CLMLYKFF.js";
-import {
-  UniverDebuggerPlugin
-} from "../chunk-REHFT7ZP.js";
-import "../chunk-HJANO4QS.js";
-import "../chunk-V5ZQE3FL.js";
-import "../chunk-IHNGOVE3.js";
+} from "../chunk-TU4LDEIV.js";
+import "../chunk-R7EK2BG5.js";
+import "../chunk-SQZXXC67.js";
+import "../chunk-KV3ZS2HR.js";
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-OJDH3EIP.js";
+} from "../chunk-A3UKNXOM.js";
+import {
+  UniverDebuggerPlugin
+} from "../chunk-B3MT54JI.js";
+import "../chunk-XMZRHB3U.js";
+import {
+  zh_CN_default
+} from "../chunk-2LAJUHX4.js";
+import "../chunk-7ZXKKBXQ.js";
+import "../chunk-DBRQB4K6.js";
+import {
+  UNISCRIT_WORKBOOK_DATA_DEMO,
+  loadDebuggerLocale
+} from "../chunk-KQO45UGS.js";
 import {
   UniverSheetsNumfmtPlugin
-} from "../chunk-CDKUTHSD.js";
+} from "../chunk-OGX7UMKT.js";
+import "../chunk-M75IOHPL.js";
 import {
   UniverSheetsUIPlugin
-} from "../chunk-6MBQ2LW4.js";
-import {
-  UNISCRIT_WORKBOOK_DATA_DEMO
-} from "../chunk-WY5SBACQ.js";
+} from "../chunk-OWNWYWPL.js";
+import "../chunk-O4CRIMVC.js";
+import "../chunk-O7N5FSIK.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin
-} from "../chunk-GMQ4GLVG.js";
+} from "../chunk-DOP4XK2T.js";
+import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
   UniverUIPlugin
-} from "../chunk-TWPETBMX.js";
-import {
-  zh_CN_default
-} from "../chunk-IPDBHQ7H.js";
+} from "../chunk-WATNN632.js";
+import "../chunk-2FVEG47S.js";
+import "../chunk-7FCCOEOP.js";
+import "../chunk-GNAKMJK7.js";
 import {
   UniverSheetsFormulaPlugin
-} from "../chunk-JPAQCREO.js";
+} from "../chunk-LOCMHYVK.js";
 import {
   UniverFormulaEnginePlugin,
   UniverSheetsPlugin
-} from "../chunk-E7MFA523.js";
+} from "../chunk-TJVV3XAG.js";
 import {
+  Univer,
   UniverRenderEnginePlugin
-} from "../chunk-XDSNGS3M.js";
-import {
-  Univer
-} from "../chunk-JD4X33BA.js";
+} from "../chunk-K4NPP4YC.js";
 import "../chunk-EQ2B2W73.js";
-import "../chunk-24OICD5T.js";
+import "../chunk-HECJ2TYE.js";
 
 // src/sheets-uniscript/main.ts
 var IS_E2E = false;
@@ -82,6 +88,8 @@ univer.registerPlugin(UniverUniscriptPlugin, {
 if (IS_E2E) {
   univer.registerPlugin(UniverDebuggerPlugin, {
     fab: false,
+    fabEntryUnitType: 2 /* UNIVER_SHEET */,
+    localeLoader: loadDebuggerLocale,
     performanceMonitor: {
       enabled: false
     }
