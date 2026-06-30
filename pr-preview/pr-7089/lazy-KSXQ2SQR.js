@@ -29,7 +29,7 @@ import {
 import "./chunk-KFAKKVKR.js";
 import {
   UniverSheetsDrawingUIPlugin
-} from "./chunk-ROYGW75U.js";
+} from "./chunk-QCTU5SSF.js";
 import "./chunk-WJK4JVFL.js";
 import "./chunk-NMAQHIKV.js";
 import "./chunk-XUSXRDTA.js";

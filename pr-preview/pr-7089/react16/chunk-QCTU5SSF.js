@@ -6702,22 +6702,25 @@ SheetDrawingUIController = __decorateClass([
 var SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES = [
   [SheetCanvasFloatDomManagerService]
 ];
+var SHEETS_DRAWING_FLOATING_HOST_TOUCH_DEPENDENCIES = [
+  [SheetCanvasFloatDomManagerService]
+];
 function registerSheetsDrawingFloatingHostCapability(injector) {
   registerDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES);
   touchSheetsDrawingFloatingHostCapabilityWhenReady(injector);
 }
 function touchSheetsDrawingFloatingHostCapabilityWhenReady(injector) {
   if (!injector.has(LifecycleService)) {
-    touchDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES);
+    touchDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_TOUCH_DEPENDENCIES);
     return;
   }
   const lifecycleService = injector.get(LifecycleService);
   if (lifecycleService.stage >= 1 /* Ready */) {
-    touchDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES);
+    touchDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_TOUCH_DEPENDENCIES);
     return;
   }
   void lifecycleService.onStage(1 /* Ready */).then(() => {
-    touchDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES);
+    touchDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_TOUCH_DEPENDENCIES);
   });
 }
 

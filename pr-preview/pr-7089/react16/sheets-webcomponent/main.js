@@ -66,7 +66,7 @@ import {
 } from "../chunk-KFAKKVKR.js";
 import {
   UniverSheetsDrawingUIPlugin
-} from "../chunk-ROYGW75U.js";
+} from "../chunk-QCTU5SSF.js";
 import {
   UniverSheetsDrawingPlugin,
   UniverSheetsUIPlugin
