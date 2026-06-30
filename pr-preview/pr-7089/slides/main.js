@@ -1,7 +1,7 @@
 import "../chunk-JAOCXPOL.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-2ZMMYE34.js";
+} from "../chunk-DJRBEBL2.js";
 import {
   UniverWatermarkPlugin
 } from "../chunk-Y3FCVIF5.js";
@@ -16,8 +16,8 @@ import {
   UniverSlidesPlugin,
   loadDebuggerLocale
 } from "../chunk-4GXM2FGZ.js";
-import "../chunk-6JU23VLJ.js";
-import "../chunk-QMEMTVMY.js";
+import "../chunk-ROYGW75U.js";
+import "../chunk-WJK4JVFL.js";
 import "../chunk-O4CRIMVC.js";
 import "../chunk-XUSXRDTA.js";
 import {
