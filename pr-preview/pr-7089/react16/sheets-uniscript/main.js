@@ -1,43 +1,43 @@
 import {
   UniverUniscriptPlugin
-} from "../chunk-NFX7RVDD.js";
+} from "../chunk-NSXVVHZT.js";
 import "../chunk-R7EK2BG5.js";
 import "../chunk-SQZXXC67.js";
 import "../chunk-KV3ZS2HR.js";
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-OC6XTNZ2.js";
+} from "../chunk-BYF5GDLH.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-Q7TBCHM7.js";
+} from "../chunk-2IQRMH5J.js";
 import "../chunk-Y3FCVIF5.js";
 import {
   zh_CN_default
 } from "../chunk-PLO6OHDI.js";
-import "../chunk-CBJJUH2Z.js";
+import "../chunk-EZ7VJCUB.js";
 import "../chunk-DBRQB4K6.js";
 import {
   UNISCRIT_WORKBOOK_DATA_DEMO,
   loadDebuggerLocale
-} from "../chunk-UDBXAFIO.js";
+} from "../chunk-4GXM2FGZ.js";
 import {
   UniverSheetsNumfmtPlugin
 } from "../chunk-KFAKKVKR.js";
-import "../chunk-5PRAOZGF.js";
+import "../chunk-6JU23VLJ.js";
 import {
   UniverSheetsUIPlugin
-} from "../chunk-FCZOVYFF.js";
+} from "../chunk-QMEMTVMY.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-GGLAE6FN.js";
+import "../chunk-XUSXRDTA.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin
-} from "../chunk-WB4OG647.js";
+} from "../chunk-7HTXW44V.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
   UniverUIPlugin
-} from "../chunk-X254Q5T7.js";
+} from "../chunk-Y2B2TBBI.js";
 import "../chunk-2FVEG47S.js";
 import "../chunk-6A74XRF7.js";
 import "../chunk-YTTBVE7U.js";
