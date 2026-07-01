@@ -3,7 +3,7 @@ import {
 } from "./chunk-MDJWD5HA.js";
 import {
   UniverUniscriptPlugin
-} from "./chunk-3QU3UO4L.js";
+} from "./chunk-77QL22TV.js";
 import "./chunk-R7EK2BG5.js";
 import "./chunk-SQZXXC67.js";
 import "./chunk-KV3ZS2HR.js";
@@ -18,7 +18,7 @@ import {
 } from "./chunk-HJRG6PKL.js";
 import {
   UniverDebuggerPlugin
-} from "./chunk-LYERB7ER.js";
+} from "./chunk-N2KQ7554.js";
 import {
   UniverWatermarkPlugin
 } from "./chunk-64HUTA3W.js";
@@ -38,7 +38,7 @@ import "./chunk-J37K44IC.js";
 import "./chunk-IKEI3MPD.js";
 import "./chunk-HDLECXKN.js";
 import "./chunk-2CRQQJ6A.js";
-import "./chunk-CWQZSNKX.js";
+import "./chunk-5FB7AP4L.js";
 import "./chunk-TFRWRFHW.js";
 import "./chunk-DZXTHJ7X.js";
 import "./chunk-EZGZWPMZ.js";

@@ -6,7 +6,7 @@ import {
   FBase,
   FBaseInitialable,
   FUniver
-} from "./chunk-CWQZSNKX.js";
+} from "./chunk-5FB7AP4L.js";
 import {
   ICommandService,
   IRenderManagerService,

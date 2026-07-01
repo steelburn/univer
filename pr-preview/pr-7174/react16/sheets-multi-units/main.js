@@ -10,14 +10,14 @@ import {
 import {
   UniverThreadCommentUIPlugin
 } from "../chunk-WEA3Q7NY.js";
-import "../chunk-OOCQCOMX.js";
+import "../chunk-MSETCZ3F.js";
 import "../chunk-HJRG6PKL.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
 import "../chunk-DBRQB4K6.js";
-import "../chunk-RLZWDN5B.js";
-import "../chunk-5NG5MVHC.js";
+import "../chunk-JOZD5TK6.js";
+import "../chunk-4OPLHD3M.js";
 import {
   UniverSheetsThreadCommentPlugin
 } from "../chunk-RCWWIC46.js";
@@ -65,7 +65,7 @@ import {
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
-} from "../chunk-CWQZSNKX.js";
+} from "../chunk-5FB7AP4L.js";
 import "../chunk-GNAKMJK7.js";
 import {
   UniverSheetsFormulaPlugin
@@ -190,7 +190,7 @@ setTimeout(() => {
   });
 }, LOAD_LAZY_PLUGINS_TIMEOUT);
 setTimeout(() => {
-  import("../very-lazy-QZSUIVVC.js").then((lazy) => {
+  import("../very-lazy-4URKS7HD.js").then((lazy) => {
     const plugins = lazy.default();
     plugins.forEach((p) => univer.registerPlugin(p[0], p[1]));
   });
