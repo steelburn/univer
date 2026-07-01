@@ -67,7 +67,7 @@ import {
 import {
   UniverSheetsDrawingPlugin,
   UniverSheetsDrawingUIPlugin
-} from "../chunk-QVECHYK2.js";
+} from "../chunk-B7Y55ADG.js";
 import {
   UniverSheetsUIPlugin
 } from "../chunk-RTHKTSDC.js";

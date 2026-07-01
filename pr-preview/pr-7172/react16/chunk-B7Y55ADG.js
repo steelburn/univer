@@ -543,9 +543,6 @@ function hasIncomingAngle(drawing) {
   return ((_a = drawing.transform) == null ? void 0 : _a.angle) !== void 0 || ((_b = drawing.sheetTransform) == null ? void 0 : _b.angle) !== void 0 || ((_c = drawing.axisAlignSheetTransform) == null ? void 0 : _c.angle) !== void 0;
 }
 function preserveAngle(incoming, current) {
-  if (incoming.angle === void 0) {
-    return incoming;
-  }
   const currentAngle = current == null ? void 0 : current.angle;
   const next = { ...current != null ? current : {}, ...incoming };
   if (currentAngle === void 0) {

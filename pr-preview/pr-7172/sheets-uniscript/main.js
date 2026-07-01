@@ -9,7 +9,7 @@ import {
 } from "../chunk-FZLYHWCL.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-I7VK5P5G.js";
+} from "../chunk-YYHHPDTN.js";
 import "../chunk-MMSETCV3.js";
 import {
   zh_CN_default
@@ -23,7 +23,7 @@ import {
 import {
   UniverSheetsNumfmtPlugin
 } from "../chunk-Z2NTRMDG.js";
-import "../chunk-QVECHYK2.js";
+import "../chunk-B7Y55ADG.js";
 import {
   UniverSheetsUIPlugin
 } from "../chunk-RTHKTSDC.js";
