@@ -1,4 +1,4 @@
-import "../chunk-NAFSFJ2J.js";
+import "../chunk-7KIBVP6A.js";
 import {
   UniverDocsMentionUIPlugin
 } from "../chunk-HSQQJXPZ.js";
@@ -9,7 +9,7 @@ import {
 import "../chunk-WEA3Q7NY.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-6SJR2W67.js";
+} from "../chunk-3TTL3SYY.js";
 import {
   UniverWatermarkPlugin
 } from "../chunk-64HUTA3W.js";
@@ -28,7 +28,7 @@ import {
 import "../chunk-PHYCH7W2.js";
 import "../chunk-NY6WTFH4.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-3RMYYSVU.js";
+import "../chunk-FNI6XDZ5.js";
 import "../chunk-XQE6PPMO.js";
 import {
   UniverDocsDrawingPlugin,
@@ -81,7 +81,7 @@ import {
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
-} from "../chunk-FWMKJL2M.js";
+} from "../chunk-5FB7AP4L.js";
 import "../chunk-GNAKMJK7.js";
 import "../chunk-TFRWRFHW.js";
 import {

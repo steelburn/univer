@@ -128,7 +128,12 @@ var FBaseInitialable = class extends Disposable {
         }
         initializers.push(source.prototype._initialize);
       } else if (name !== "constructor") {
-        this.prototype[name] = source.prototype[name];
+        const descriptor = Object.getOwnPropertyDescriptor(source.prototype, name);
+        if (descriptor) {
+          Object.defineProperty(this.prototype, name, descriptor);
+        } else {
+          this.prototype[name] = source.prototype[name];
+        }
       }
     });
     Object.getOwnPropertyNames(source).forEach((name) => {
