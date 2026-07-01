@@ -1,15 +1,15 @@
 import "../chunk-NAFSFJ2J.js";
 import {
   UniverDocsMentionUIPlugin
-} from "../chunk-SQEU3IBJ.js";
+} from "../chunk-HSQQJXPZ.js";
 import {
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-2A7WZYSD.js";
-import "../chunk-GOYTGSAS.js";
+} from "../chunk-FOZD5SX5.js";
+import "../chunk-WEA3Q7NY.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-B3QJODMT.js";
+} from "../chunk-6SJR2W67.js";
 import {
   UniverWatermarkPlugin
 } from "../chunk-64HUTA3W.js";
@@ -19,21 +19,21 @@ import {
 import {
   InsertDocImageCommand,
   UniverDocsDrawingUIPlugin
-} from "../chunk-N3EBHSLZ.js";
+} from "../chunk-PFNAD6UU.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE,
   loadDebuggerLocale
-} from "../chunk-PSHEMSDX.js";
-import "../chunk-5BRFBFTR.js";
-import "../chunk-PJTMITJH.js";
+} from "../chunk-6PXKRXUI.js";
+import "../chunk-PHYCH7W2.js";
+import "../chunk-NY6WTFH4.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-BVARK4E3.js";
+import "../chunk-3RMYYSVU.js";
 import "../chunk-XQE6PPMO.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-4PO5VQGQ.js";
+} from "../chunk-J37K44IC.js";
 import {
   BulletListCommand,
   CutContentCommand,
@@ -55,7 +55,7 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getAnchorBounding
-} from "../chunk-HWL2O7ZV.js";
+} from "../chunk-IKEI3MPD.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -83,10 +83,10 @@ import {
   FUniver
 } from "../chunk-FWMKJL2M.js";
 import "../chunk-GNAKMJK7.js";
-import "../chunk-JA4IFPKI.js";
+import "../chunk-TFRWRFHW.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-XSMQZID2.js";
+} from "../chunk-DZXTHJ7X.js";
 import {
   BehaviorSubject,
   DependentOn,
