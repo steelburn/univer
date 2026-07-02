@@ -1,6 +1,6 @@
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-VP5BSPDF.js";
+} from "../chunk-24KRN2XK.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";

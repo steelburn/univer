@@ -9,10 +9,10 @@ import {
   UniverSheetsConditionalFormattingUIPlugin,
   UniverSheetsDataValidationUIPlugin,
   UniverSheetsFilterUIPlugin
-} from "../chunk-2EBJAR6J.js";
+} from "../chunk-EYYVPCVY.js";
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-VP5BSPDF.js";
+} from "../chunk-24KRN2XK.js";
 import {
   en_US_default
 } from "../chunk-NFKYF4QC.js";

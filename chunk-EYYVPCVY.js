@@ -12509,11 +12509,18 @@ UniverSheetsFilterUIPlugin = __decorateClass([
 
 // ../packages/sheets-filter-ui/src/worker/plugin.ts
 var UniverSheetsFilterUIWorkerPlugin = class extends Plugin {
-  constructor(_config, _injector, _rpcChannelService) {
+  constructor(_config = defaultPluginConfig3, _injector, _configService, _rpcChannelService) {
     super();
     __publicField(this, "_config", _config);
     __publicField(this, "_injector", _injector);
+    __publicField(this, "_configService", _configService);
     __publicField(this, "_rpcChannelService", _rpcChannelService);
+    const { ...rest } = merge_default(
+      {},
+      defaultPluginConfig3,
+      this._config
+    );
+    this._configService.setConfig(SHEETS_FILTER_UI_PLUGIN_CONFIG_KEY, rest);
   }
   onStarting() {
     [
@@ -12533,7 +12540,8 @@ __publicField(UniverSheetsFilterUIWorkerPlugin, "packageName", package_default3.
 __publicField(UniverSheetsFilterUIWorkerPlugin, "version", package_default3.version);
 UniverSheetsFilterUIWorkerPlugin = __decorateClass([
   __decorateParam(1, Inject(Injector)),
-  __decorateParam(2, IRPCChannelService)
+  __decorateParam(2, IConfigService),
+  __decorateParam(3, IRPCChannelService)
 ], UniverSheetsFilterUIWorkerPlugin);
 
 export {

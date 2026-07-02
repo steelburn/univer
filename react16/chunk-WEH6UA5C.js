@@ -20,6 +20,7 @@ import {
   DependentOn,
   Disposable,
   ICommandService,
+  IConfigService,
   IUniverInstanceService,
   Inject,
   Injector,
@@ -27,6 +28,7 @@ import {
   Plugin,
   Subject,
   generateRandomId,
+  merge_default,
   sequenceExecuteAsync,
   toDisposable,
   touchDependencies
@@ -680,11 +682,18 @@ var SHEET_THREAD_COMMENT_BASE = "SHEET_THREAD_COMMENT_BASE_PLUGIN";
 
 // ../packages/sheets-thread-comment/src/plugin.ts
 var UniverSheetsThreadCommentPlugin = class extends Plugin {
-  constructor(_config = defaultPluginConfig, _injector, _commandService) {
+  constructor(_config = defaultPluginConfig, _injector, _commandService, _configService) {
     super();
     __publicField(this, "_config", _config);
     __publicField(this, "_injector", _injector);
     __publicField(this, "_commandService", _commandService);
+    __publicField(this, "_configService", _configService);
+    const { ...rest } = merge_default(
+      {},
+      defaultPluginConfig,
+      this._config
+    );
+    this._configService.setConfig(SHEETS_THREAD_COMMENT_PLUGIN_CONFIG_KEY, rest);
   }
   onStarting() {
     [
@@ -707,7 +716,8 @@ __publicField(UniverSheetsThreadCommentPlugin, "type", 2 /* UNIVER_SHEET */);
 UniverSheetsThreadCommentPlugin = __decorateClass([
   DependentOn(UniverThreadCommentPlugin),
   __decorateParam(1, Inject(Injector)),
-  __decorateParam(2, Inject(ICommandService))
+  __decorateParam(2, Inject(ICommandService)),
+  __decorateParam(3, IConfigService)
 ], UniverSheetsThreadCommentPlugin);
 
 export {

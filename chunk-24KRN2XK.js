@@ -1785,7 +1785,7 @@ var UniverSheetsNumfmtUIPlugin = class extends Plugin {
     if (menu) {
       this._configService.setConfig("menu", menu, { merge: true });
     }
-    this._configService.setConfig("sheets-numfmt-ui.config", rest);
+    this._configService.setConfig(SHEETS_NUMFMT_UI_PLUGIN_CONFIG_KEY, rest);
   }
   onStarting() {
     this._injector.add([ComponentsController]);

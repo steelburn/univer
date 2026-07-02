@@ -6,10 +6,10 @@ import "../chunk-SQZXXC67.js";
 import "../chunk-KV3ZS2HR.js";
 import {
   UniverSheetsNumfmtUIPlugin
-} from "../chunk-VP5BSPDF.js";
+} from "../chunk-24KRN2XK.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-M57OCZ4E.js";
+} from "../chunk-5RXLLQWZ.js";
 import "../chunk-IPUQHYKH.js";
 import {
   zh_CN_default

@@ -4,9 +4,11 @@ import {
 } from "./chunk-LIG3MUKA.js";
 import {
   DependentOn,
+  IConfigService,
   Inject,
   Injector,
-  Plugin
+  Plugin,
+  merge_default
 } from "./chunk-TEI2QFPC.js";
 import {
   __decorateClass,
@@ -6984,13 +6986,25 @@ var package_default = {
   }
 };
 
+// ../packages/ui-adapter-vue3/src/config/config.ts
+var UI_ADAPTER_VUE3_PLUGIN_CONFIG_KEY = "ui-adapter-vue3.config";
+var configSymbol = Symbol(UI_ADAPTER_VUE3_PLUGIN_CONFIG_KEY);
+var defaultPluginConfig = {};
+
 // ../packages/ui-adapter-vue3/src/plugin.ts
 var UniverVue3AdapterPlugin = class extends Plugin {
-  constructor(_config = {}, _injector, _componentManager) {
+  constructor(_config = defaultPluginConfig, _injector, _configService, _componentManager) {
     super();
     __publicField(this, "_config", _config);
     __publicField(this, "_injector", _injector);
+    __publicField(this, "_configService", _configService);
     __publicField(this, "_componentManager", _componentManager);
+    const { ...rest } = merge_default(
+      {},
+      defaultPluginConfig,
+      this._config
+    );
+    this._configService.setConfig(UI_ADAPTER_VUE3_PLUGIN_CONFIG_KEY, rest);
   }
   onStarting() {
     const { createElement, useEffect, useRef } = this._componentManager.reactUtils;
@@ -7014,7 +7028,8 @@ __publicField(UniverVue3AdapterPlugin, "version", package_default.version);
 UniverVue3AdapterPlugin = __decorateClass([
   DependentOn(UniverUIPlugin),
   __decorateParam(1, Inject(Injector)),
-  __decorateParam(2, Inject(ComponentManager))
+  __decorateParam(2, IConfigService),
+  __decorateParam(3, Inject(ComponentManager))
 ], UniverVue3AdapterPlugin);
 function VueComponentWrapper(options) {
   const { component, props, reactUtils } = options;
@@ -7108,13 +7123,25 @@ var package_default2 = {
   }
 };
 
+// ../packages/ui-adapter-web-component/src/config/config.ts
+var UI_ADAPTER_WEB_COMPONENT_PLUGIN_CONFIG_KEY = "ui-adapter-web-component.config";
+var configSymbol2 = Symbol(UI_ADAPTER_WEB_COMPONENT_PLUGIN_CONFIG_KEY);
+var defaultPluginConfig2 = {};
+
 // ../packages/ui-adapter-web-component/src/plugin.ts
 var UniverWebComponentAdapterPlugin = class extends Plugin {
-  constructor(_config = {}, _injector, _componentManager) {
+  constructor(_config = defaultPluginConfig2, _injector, _configService, _componentManager) {
     super();
     __publicField(this, "_config", _config);
     __publicField(this, "_injector", _injector);
+    __publicField(this, "_configService", _configService);
     __publicField(this, "_componentManager", _componentManager);
+    const { ...rest } = merge_default(
+      {},
+      defaultPluginConfig2,
+      this._config
+    );
+    this._configService.setConfig(UI_ADAPTER_WEB_COMPONENT_PLUGIN_CONFIG_KEY, rest);
   }
   onStarting() {
     const { createElement, useEffect, useRef } = this._componentManager.reactUtils;
@@ -7135,7 +7162,8 @@ __publicField(UniverWebComponentAdapterPlugin, "version", package_default2.versi
 UniverWebComponentAdapterPlugin = __decorateClass([
   DependentOn(UniverUIPlugin),
   __decorateParam(1, Inject(Injector)),
-  __decorateParam(2, Inject(ComponentManager))
+  __decorateParam(2, IConfigService),
+  __decorateParam(3, Inject(ComponentManager))
 ], UniverWebComponentAdapterPlugin);
 function WebComponentComponentWrapper(options) {
   const { component, props, reactUtils } = options;
