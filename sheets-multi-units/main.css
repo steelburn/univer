@@ -355,6 +355,9 @@
 .univer-top-px {
   top: 1px;
 }
+.\!univer-z-\[1090\] {
+  z-index: 1090 !important;
+}
 .univer-z-0 {
   z-index: 0;
 }
@@ -1681,6 +1684,9 @@
 }
 .\!univer-border-l-0 {
   border-left-width: 0px !important;
+}
+.\!univer-border-r-0 {
+  border-right-width: 0px !important;
 }
 .\!univer-border-t-0 {
   border-top-width: 0px !important;
@@ -3401,8 +3407,14 @@
 .rtl\:univer-left-4:where([dir=rtl], [dir=rtl] *) {
   left: 1rem;
 }
+.rtl\:univer-left-auto:where([dir=rtl], [dir=rtl] *) {
+  left: auto;
+}
 .rtl\:univer-left-px:where([dir=rtl], [dir=rtl] *) {
   left: 1px;
+}
+.rtl\:univer-right-1\.5:where([dir=rtl], [dir=rtl] *) {
+  right: 0.375rem;
 }
 .rtl\:univer-right-auto:where([dir=rtl], [dir=rtl] *) {
   right: auto;
@@ -3435,6 +3447,12 @@
 }
 .rtl\:univer-border-r:where([dir=rtl], [dir=rtl] *) {
   border-right-width: 1px;
+}
+.rtl\:\!univer-pl-2:where([dir=rtl], [dir=rtl] *) {
+  padding-left: 0.5rem !important;
+}
+.rtl\:\!univer-pr-4:where([dir=rtl], [dir=rtl] *) {
+  padding-right: 1rem !important;
 }
 .rtl\:univer-pl-1\.5:where([dir=rtl], [dir=rtl] *) {
   padding-left: 0.375rem;
@@ -4415,6 +4433,9 @@
 .univer-top-px {
   top: 1px;
 }
+.\!univer-z-\[1090\] {
+  z-index: 1090 !important;
+}
 .univer-z-0 {
   z-index: 0;
 }
@@ -5741,6 +5762,9 @@
 }
 .\!univer-border-l-0 {
   border-left-width: 0px !important;
+}
+.\!univer-border-r-0 {
+  border-right-width: 0px !important;
 }
 .\!univer-border-t-0 {
   border-top-width: 0px !important;
@@ -7461,8 +7485,14 @@
 .rtl\:univer-left-4:where([dir=rtl], [dir=rtl] *) {
   left: 1rem;
 }
+.rtl\:univer-left-auto:where([dir=rtl], [dir=rtl] *) {
+  left: auto;
+}
 .rtl\:univer-left-px:where([dir=rtl], [dir=rtl] *) {
   left: 1px;
+}
+.rtl\:univer-right-1\.5:where([dir=rtl], [dir=rtl] *) {
+  right: 0.375rem;
 }
 .rtl\:univer-right-auto:where([dir=rtl], [dir=rtl] *) {
   right: auto;
@@ -7495,6 +7525,12 @@
 }
 .rtl\:univer-border-r:where([dir=rtl], [dir=rtl] *) {
   border-right-width: 1px;
+}
+.rtl\:\!univer-pl-2:where([dir=rtl], [dir=rtl] *) {
+  padding-left: 0.5rem !important;
+}
+.rtl\:\!univer-pr-4:where([dir=rtl], [dir=rtl] *) {
+  padding-right: 1rem !important;
 }
 .rtl\:univer-pl-1\.5:where([dir=rtl], [dir=rtl] *) {
   padding-left: 0.375rem;
