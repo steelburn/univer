@@ -1,15 +1,15 @@
 import "../chunk-BQZQKTNA.js";
 import {
   UniverDocsMentionUIPlugin
-} from "../chunk-P3S2MASD.js";
+} from "../chunk-2K7EJJR2.js";
 import {
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-EEQXAYSU.js";
-import "../chunk-NW7U2CY6.js";
+} from "../chunk-DVNBROCA.js";
+import "../chunk-CACPSKCK.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-6SN5BI6C.js";
+} from "../chunk-5BXAAPJF.js";
 import {
   UniverWatermarkPlugin
 } from "../chunk-QTPPJLYG.js";
@@ -19,21 +19,21 @@ import {
 import {
   InsertDocImageCommand,
   UniverDocsDrawingUIPlugin
-} from "../chunk-K4R2EFBJ.js";
+} from "../chunk-FUNJBXAY.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE,
   loadDebuggerLocale
-} from "../chunk-QLJ7OOOB.js";
-import "../chunk-EXKNWFSF.js";
-import "../chunk-QSOVMFUQ.js";
+} from "../chunk-KIYMXMPJ.js";
+import "../chunk-UTQ3QUPW.js";
+import "../chunk-IWAV5DLX.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-HHB7SBCM.js";
+import "../chunk-IA2SAE4Q.js";
 import "../chunk-E773POYQ.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-RDA67HDS.js";
+} from "../chunk-ND6OWVQZ.js";
 import {
   BulletListCommand,
   CutContentCommand,
@@ -55,7 +55,7 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getAnchorBounding
-} from "../chunk-CRWIVMZJ.js";
+} from "../chunk-JAWWWCPE.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -77,7 +77,7 @@ import {
   useDependency,
   useEvent,
   useObservable
-} from "../chunk-BVX7VFBB.js";
+} from "../chunk-PWDVVLTD.js";
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
@@ -1074,12 +1074,12 @@ var package_default = {
     "@univerjs/drawing": "workspace:*",
     "@univerjs/drawing-ui": "workspace:*",
     "@univerjs/engine-render": "workspace:*",
-    "@univerjs/icons": "1.14.0",
+    "@univerjs/icons": "1.15.1",
     "@univerjs/ui": "workspace:*"
   },
   devDependencies: {
     "@univerjs-infra/shared": "workspace:*",
-    postcss: "^8.5.15",
+    postcss: "^8.5.16",
     react: "18.3.1",
     rxjs: "^7.8.2",
     tailwindcss: "3.4.18",
