@@ -1,25 +1,25 @@
 import "../chunk-YTHE3IZR.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-OSHFMWGT.js";
+} from "../chunk-2IJ2RGHY.js";
 import {
   UniverWatermarkPlugin
 } from "../chunk-IPUQHYKH.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
-import "../chunk-YAXIM3JV.js";
+import "../chunk-3YLJDFED.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_SLIDE_DATA,
   ObjectProvider,
   UniverSlidesPlugin,
   loadDebuggerLocale
-} from "../chunk-I52BLRWQ.js";
-import "../chunk-OYJGZT7S.js";
-import "../chunk-4RI3AED2.js";
+} from "../chunk-5FYX42XZ.js";
+import "../chunk-MPWABH4Y.js";
+import "../chunk-TKUEXYWD.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-VMW4UVMR.js";
+import "../chunk-4XCOAXSD.js";
 import {
   DOCS_COMPONENT_MAIN_LAYER_INDEX,
   DRAWING_IMAGE_ALLOW_IMAGE_LIST,
@@ -35,7 +35,7 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getImageSize
-} from "../chunk-24TUDJHE.js";
+} from "../chunk-3EWICPLI.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -74,7 +74,7 @@ import {
   scrollbarClassName,
   useDependency,
   useObservable
-} from "../chunk-PDLKZOO7.js";
+} from "../chunk-6PSEXSBX.js";
 import "../chunk-2FVEG47S.js";
 import "../chunk-GVT4D57Q.js";
 import "../chunk-GNAKMJK7.js";
@@ -1755,13 +1755,13 @@ var package_default = {
     "@univerjs/docs-ui": "workspace:*",
     "@univerjs/drawing": "workspace:*",
     "@univerjs/engine-render": "workspace:*",
-    "@univerjs/icons": "1.14.0",
+    "@univerjs/icons": "1.15.1",
     "@univerjs/slides": "workspace:*",
     "@univerjs/ui": "workspace:*"
   },
   devDependencies: {
     "@univerjs-infra/shared": "workspace:*",
-    postcss: "^8.5.15",
+    postcss: "^8.5.16",
     react: "18.3.1",
     rxjs: "^7.8.2",
     tailwindcss: "3.4.18",
