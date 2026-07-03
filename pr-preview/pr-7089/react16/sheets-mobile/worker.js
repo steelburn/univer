@@ -2,10 +2,10 @@ import {
   UniverFormulaEnginePlugin,
   UniverRPCWorkerThreadPlugin,
   UniverSheetsPlugin
-} from "../chunk-6ZMAA6SO.js";
+} from "../chunk-XXPIJT3B.js";
 import {
   Univer
-} from "../chunk-AM2UDTII.js";
+} from "../chunk-P5KDHCJI.js";
 import "../chunk-EQ2B2W73.js";
 import "../chunk-HECJ2TYE.js";
 
