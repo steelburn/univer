@@ -44,7 +44,7 @@ import {
   UniverSheetsHyperLinkPlugin,
   UniverSheetsHyperLinkUIPlugin,
   UpdateHyperLinkCommand
-} from "./chunk-CM5PVF3L.js";
+} from "./chunk-YTCUO2VY.js";
 import {
   UniverSheetsSortPlugin
 } from "./chunk-LBKVQ5E5.js";

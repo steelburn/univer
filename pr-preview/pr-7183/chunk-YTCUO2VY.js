@@ -2344,6 +2344,7 @@ var CellLinkPopupPure = (props) => {
                 /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
                   "div",
                   {
+                    "data-u-comp": "cell-link-popup-edit",
                     className: `univer-flex univer-size-6 univer-cursor-pointer univer-flex-row univer-items-center univer-justify-center univer-rounded univer-text-base hover:univer-bg-gray-100 dark:hover:!univer-bg-gray-700`,
                     onClick: () => {
                       commandService.executeCommand(OpenHyperLinkEditPanelOperation.id, {
@@ -2361,6 +2362,7 @@ var CellLinkPopupPure = (props) => {
                 /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
                   "div",
                   {
+                    "data-u-comp": "cell-link-popup-remove",
                     className: `univer-flex univer-size-6 univer-cursor-pointer univer-flex-row univer-items-center univer-justify-center univer-rounded univer-text-base hover:univer-bg-gray-100 dark:hover:!univer-bg-gray-700`,
                     onClick: () => {
                       const commandId = type === "editing" /* EDITING */ ? CancelRichHyperLinkCommand.id : CancelHyperLinkCommand.id;
