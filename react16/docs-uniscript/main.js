@@ -1,6 +1,6 @@
 import {
   UniverUniscriptPlugin
-} from "../chunk-KLQVMY4E.js";
+} from "../chunk-Z23BO2OS.js";
 import "../chunk-R7EK2BG5.js";
 import "../chunk-SQZXXC67.js";
 import "../chunk-KV3ZS2HR.js";
@@ -25,7 +25,7 @@ import {
   UniverUIPlugin
 } from "../chunk-R5LDF4DG.js";
 import "../chunk-2FVEG47S.js";
-import "../chunk-EYBPCHWC.js";
+import "../chunk-CPTZZXPY.js";
 import "../chunk-GNAKMJK7.js";
 import "../chunk-3NID2K3K.js";
 import {

@@ -30,7 +30,7 @@ import {
   FRange,
   FWorkbook,
   FWorksheet
-} from "./chunk-RH7FF2I5.js";
+} from "./chunk-7SFZTVOW.js";
 import {
   UniverSheetsThreadCommentPlugin
 } from "./chunk-A3T3PRC2.js";
@@ -107,7 +107,7 @@ import {
 import {
   FEventName,
   FUniver
-} from "./chunk-EYBPCHWC.js";
+} from "./chunk-CPTZZXPY.js";
 import {
   UniverSheetsFormulaPlugin
 } from "./chunk-3NID2K3K.js";

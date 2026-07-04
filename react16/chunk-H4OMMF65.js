@@ -1,6 +1,6 @@
 import {
   FUniver
-} from "./chunk-EYBPCHWC.js";
+} from "./chunk-CPTZZXPY.js";
 import {
   IAuthzIoService,
   IMentionIOService,

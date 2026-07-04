@@ -26,7 +26,7 @@ import {
 } from "./chunk-R5LDF4DG.js";
 import {
   FUniver
-} from "./chunk-EYBPCHWC.js";
+} from "./chunk-CPTZZXPY.js";
 import {
   RangeProtectionPermissionEditPoint,
   WorkbookEditablePermission,

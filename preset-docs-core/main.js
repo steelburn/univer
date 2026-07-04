@@ -8,7 +8,7 @@ import {
 } from "../chunk-4AV5I6QD.js";
 import {
   createUniver
-} from "../chunk-AM4SJ2K5.js";
+} from "../chunk-H4OMMF65.js";
 import {
   UniverDocsDrawingUIPlugin
 } from "../chunk-OSH7ZI3D.js";
@@ -20,11 +20,11 @@ import {
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE
 } from "../chunk-WTIIFN5V.js";
-import "../chunk-DY2GRZ2P.js";
+import "../chunk-OYYIS44Q.js";
 import {
   UniverNetworkPlugin
 } from "../chunk-7BNLOK4L.js";
-import "../chunk-7BBI2JPK.js";
+import "../chunk-Q3XNDXEJ.js";
 import "../chunk-GDA2NUDC.js";
 import {
   UniverDocsDrawingPlugin,
@@ -43,7 +43,7 @@ import "../chunk-LI6UXASZ.js";
 import {
   UniverUIPlugin
 } from "../chunk-R5LDF4DG.js";
-import "../chunk-EYBPCHWC.js";
+import "../chunk-CPTZZXPY.js";
 import {
   zh_CN_default,
   zh_CN_default2 as zh_CN_default5,

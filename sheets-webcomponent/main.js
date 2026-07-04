@@ -43,7 +43,7 @@ import {
   UniverSheetsNotePlugin,
   UniverSheetsTablePlugin
 } from "../chunk-QNY7CWR4.js";
-import "../chunk-RH7FF2I5.js";
+import "../chunk-7SFZTVOW.js";
 import {
   UniverSheetsThreadCommentPlugin
 } from "../chunk-A3T3PRC2.js";
@@ -98,7 +98,7 @@ import {
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
-} from "../chunk-EYBPCHWC.js";
+} from "../chunk-CPTZZXPY.js";
 import "../chunk-GNAKMJK7.js";
 import {
   UniverSheetsFormulaPlugin

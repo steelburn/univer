@@ -5,7 +5,7 @@ import {
 import {
   FBase,
   FUniver
-} from "./chunk-EYBPCHWC.js";
+} from "./chunk-CPTZZXPY.js";
 import {
   Inject,
   Injector

@@ -1,6 +1,6 @@
 import {
   UniverUniscriptPlugin
-} from "../chunk-KLQVMY4E.js";
+} from "../chunk-Z23BO2OS.js";
 import "../chunk-R7EK2BG5.js";
 import "../chunk-SQZXXC67.js";
 import "../chunk-KV3ZS2HR.js";
@@ -9,7 +9,7 @@ import {
 } from "../chunk-3PUEH46Q.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-ELNA2S2Q.js";
+} from "../chunk-ZOP4FIJA.js";
 import "../chunk-3ZIH2AQF.js";
 import {
   zh_CN_default
@@ -39,7 +39,7 @@ import {
   UniverUIPlugin
 } from "../chunk-R5LDF4DG.js";
 import "../chunk-2FVEG47S.js";
-import "../chunk-EYBPCHWC.js";
+import "../chunk-CPTZZXPY.js";
 import "../chunk-GNAKMJK7.js";
 import {
   UniverSheetsFormulaPlugin

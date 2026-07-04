@@ -2,7 +2,7 @@ import {
   FRange,
   FWorkbook,
   FWorksheet
-} from "./chunk-RH7FF2I5.js";
+} from "./chunk-7SFZTVOW.js";
 import {
   SheetsThreadCommentModel
 } from "./chunk-A3T3PRC2.js";
@@ -138,7 +138,7 @@ import {
   FEventName,
   FHooks,
   FUniver
-} from "./chunk-EYBPCHWC.js";
+} from "./chunk-CPTZZXPY.js";
 import {
   CalculationMode,
   FormulaCalculationSessionService,
@@ -1259,14 +1259,7 @@ var ConditionalFormatDataBarRuleBuilder = class _ConditionalFormatDataBarRuleBui
   }
   /**
    * Set data bar rule.
-   * @param {{
-   *         min: IValueConfig;
-   *         max: IValueConfig;
-   *         isGradient?: boolean;
-   *         positiveColor: string;
-   *         nativeColor: string;
-   *         isShowValue?: boolean;
-   *     }} config - The data bar rule settings.
+   * @param {object} config - The data bar rule settings.
    * @param {IValueConfig} config.min - The minimum value for the data bar.
    * @param {IValueConfig} config.max - The maximum value for the data bar.
    * @param {boolean} [config.isGradient] - Whether the data bar is gradient.
@@ -1733,14 +1726,7 @@ var FConditionalFormattingBuilder = class {
   }
   /**
    * Set data bar rule.
-   * @param {{
-   *         min: IValueConfig;
-   *         max: IValueConfig;
-   *         isGradient?: boolean;
-   *         positiveColor: string;
-   *         nativeColor: string;
-   *         isShowValue?: boolean;
-   *     }} config - The data bar rule settings.
+   * @param {object} config - The data bar rule settings.
    * @param {IValueConfig} config.min - The minimum value for the data bar.
    * @param {IValueConfig} config.max - The maximum value for the data bar.
    * @param {boolean} [config.isGradient] - Whether the data bar is gradient.
@@ -2524,6 +2510,7 @@ var FMenu = class extends FMenuBase {
   }
   /**
    * @ignore
+   * @returns The generated menu schema.
    */
   __getSchema() {
     this._commandToRegister.forEach((command, id) => {
@@ -2644,6 +2631,7 @@ var FSubmenu = class extends FMenuBase {
   }
   /**
    * @ignore
+   * @returns The generated submenu schema.
    */
   __getSchema() {
     const schema = {};
@@ -4510,6 +4498,8 @@ var FFormula = class extends FBase {
   }
   /**
    * @deprecated Use `onCalculationResultApplied` instead.
+   * @param {number} [timeout] The timeout in milliseconds. Defaults to 30000.
+   * @returns {Promise<boolean>} Whether computing completed before timeout.
    */
   whenComputingCompleteAsync(timeout) {
     const gcss = this._injector.get(GlobalComputingStatusService);
@@ -4521,6 +4511,7 @@ var FFormula = class extends FBase {
   }
   /**
    * @deprecated Use `onCalculationResultApplied` instead.
+   * @returns {Promise<void>} A promise that resolves when calculation ends.
    */
   onCalculationEnd() {
     return new Promise((resolve, reject) => {
@@ -4720,11 +4711,11 @@ var FFormula = class extends FBase {
    * dependency-calculation command for the given unit, sheet, and cell location,
    * and returns the computed dependency tree when the calculation is completed.
    *
-   * @param param The target cell location:
-   *   - `unitId`  The workbook ID.
-   *   - `sheetId` The sheet ID.
-   *   - `row`     The zero-based row index.
-   *   - `column`  The zero-based column index.
+   * @param {object} param The target cell location.
+   * @param {string} param.unitId The workbook ID.
+   * @param {string} param.sheetId The sheet ID.
+   * @param {number} param.row The zero-based row index.
+   * @param {number} param.column The zero-based column index.
    *
    * @param {number} [timeout]
    *        Optional timeout in milliseconds. If no result is received within this
@@ -5001,6 +4992,7 @@ var FFormula = class extends FBase {
    * ```
    *
    * @param formulaString The formula string to parse (with or without leading `=`)
+   * @param unitId The workbook unit id used to resolve defined names and tables.
    * @returns A formula expression tree describing the hierarchical structure of the formula
    */
   getFormulaExpressTree(formulaString, unitId) {
@@ -10152,7 +10144,8 @@ var FThreadComment = class {
     return this._injector.createInstance(FRange, workbook, worksheet, range);
   }
   /**
-   * @deprecated use `getRichText` as instead
+   * @deprecated Use `getRichText` instead.
+   * @returns {IDocumentBody} The comment content.
    */
   getContent() {
     return this._thread.text;
@@ -10201,13 +10194,16 @@ var FThreadComment = class {
     );
   }
   /**
-   * @deprecated use `deleteAsync` as instead.
+   * @deprecated Use `deleteAsync` instead.
+   * @returns {Promise<boolean>} Whether the comment is deleted successfully.
    */
   delete() {
     return this.deleteAsync();
   }
   /**
-   * @deprecated use `updateAsync` as instead
+   * @deprecated Use `updateAsync` instead.
+   * @param {IDocumentBody} content The new content of the comment.
+   * @returns {Promise<boolean>} Whether the comment is updated successfully.
    */
   async update(content) {
     return this.updateAsync(content);
@@ -10258,7 +10254,9 @@ var FThreadComment = class {
     return res;
   }
   /**
-   * @deprecated use `resolveAsync` as instead
+   * @deprecated Use `resolveAsync` instead.
+   * @param {boolean} [resolved] Whether the comment is resolved.
+   * @returns {Promise<boolean>} Set the comment to resolved or not operation result.
    */
   resolve(resolved) {
     return this.resolveAsync(resolved);
@@ -10476,6 +10474,7 @@ var FWorkbookSheetsThreadCommentMixin = class extends FWorkbook {
   }
   /**
    * @param callback
+   * @returns {IDisposable} A disposable used to remove the listener.
    * @deprecated
    */
   onThreadCommentChange(callback) {
@@ -10483,6 +10482,7 @@ var FWorkbookSheetsThreadCommentMixin = class extends FWorkbook {
   }
   /**
    * @param callback
+   * @returns {IDisposable} A disposable used to remove the listener.
    * @deprecated
    */
   onBeforeAddThreadComment(callback) {
@@ -10500,6 +10500,7 @@ var FWorkbookSheetsThreadCommentMixin = class extends FWorkbook {
   }
   /**
    * @param callback
+   * @returns {IDisposable} A disposable used to remove the listener.
    * @deprecated
    */
   onBeforeUpdateThreadComment(callback) {
@@ -10517,6 +10518,7 @@ var FWorkbookSheetsThreadCommentMixin = class extends FWorkbook {
   }
   /**
    * @param callback
+   * @returns {IDisposable} A disposable used to remove the listener.
    * @deprecated
    */
   onBeforeDeleteThreadComment(callback) {
@@ -10550,6 +10552,7 @@ var FWorksheetCommentMixin = class extends FWorksheet {
   /**
    * Subscribe to comment events.
    * @param callback Callback function, param contains comment info and target cell.
+   * @returns {IDisposable} A disposable used to remove the listener.
    */
   onCommented(callback) {
     const commandService = this._injector.get(ICommandService);
@@ -10807,6 +10810,7 @@ var FUniverSheetsThreadCommentMixin = class extends FUniver {
   }
   /**
    * @ignore
+   * @returns {FTheadCommentBuilder} The thread comment builder.
    */
   newTheadComment(comment) {
     return new FTheadCommentBuilder(comment);

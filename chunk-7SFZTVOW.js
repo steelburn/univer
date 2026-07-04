@@ -4,7 +4,7 @@ import {
   FEnum,
   FEventName,
   FUniver
-} from "./chunk-EYBPCHWC.js";
+} from "./chunk-CPTZZXPY.js";
 import {
   AddRangeProtectionMutation,
   AddWorksheetProtectionMutation,
@@ -2000,6 +2000,8 @@ var FWorksheetPermission = class extends FBase {
   }
   /**
    * List all range protection rules for the worksheet.
+   * @param {object} [options] Options for listing range protection rules.
+   * @param {boolean} [options.ignoreCollaborators] Whether to skip fetching collaborators for performance.
    * @returns {Promise<FRangeProtectionRule[]>} Array of protection rules.
    * @example
    * ```ts
@@ -4625,6 +4627,8 @@ var FRangePermission = class extends FBase {
   }
   /**
    * List all protection rules that intersect with the current range.
+   * @param {object} [options] Options for listing protection rules.
+   * @param {boolean} [options.ignoreCollaborators] Whether to skip fetching collaborators for performance.
    * @returns {Promise<FRangeProtectionRule[]>} Array of protection rules.
    * @example
    * ```ts
@@ -7487,6 +7491,7 @@ var FWorkbook = class extends FBaseInitialable {
   /**
    * Set the name of the workbook.
    * @param {string} name The new name of the workbook.
+   * @returns {FWorkbook} The current FWorkbook instance for chaining.
    * @example
    * ```ts
    * // The code below sets the name of the workbook
@@ -8167,7 +8172,6 @@ var FWorkbook = class extends FBaseInitialable {
   /**
    * Insert a defined name by builder param.
    * @param {ISetDefinedNameMutationParam} param The param to insert the defined name
-   * @returns {void}
    * @example
    * ```ts
    * // The code below inserts a defined name by builder param
@@ -8186,7 +8190,6 @@ var FWorkbook = class extends FBaseInitialable {
   /**
    * Update the defined name with the given name.
    * @param {ISetDefinedNameMutationParam} param The param to insert the defined name
-   * @returns {void}
    * @example
    * ```ts
    * // The code below updates the defined name with the given name
@@ -8260,7 +8263,6 @@ var FWorkbook = class extends FBaseInitialable {
   /**
    * Register a custom range theme style.
    * @param {RangeThemeStyle} rangeThemeStyle The range theme style to register
-   * @returns {void}
    * @example
    * ```ts
    * const fWorkbook = univerAPI.getActiveWorkbook();
@@ -8283,7 +8285,6 @@ var FWorkbook = class extends FBaseInitialable {
   /**
    * Unregister a custom range theme style.
    * @param {string} themeName The name of the theme to unregister
-   * @returns {void}
    * @example
    * ```ts
    * const fWorkbook = univerAPI.getActiveWorkbook();
