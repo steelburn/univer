@@ -2,16 +2,16 @@ import {
   UniverDocsHyperLinkPlugin,
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-QXXON5WA.js";
+} from "../chunk-ZGX46WDU.js";
 import {
   UniverThreadCommentUIPlugin
-} from "../chunk-4ZMC7QHQ.js";
+} from "../chunk-BAJFTYMY.js";
 import {
   createUniver
 } from "../chunk-54TKSGFU.js";
 import {
   UniverDocsDrawingUIPlugin
-} from "../chunk-AUMKBFBH.js";
+} from "../chunk-BRD64FI7.js";
 import {
   zh_CN_default as zh_CN_default2,
   zh_CN_default2 as zh_CN_default3,
@@ -19,22 +19,22 @@ import {
 } from "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE
-} from "../chunk-6UH5WRGL.js";
+} from "../chunk-CDVYIJEF.js";
 import "../chunk-2WPPZGNP.js";
 import {
   UniverNetworkPlugin
 } from "../chunk-A5NVPALB.js";
-import "../chunk-57GM7YHV.js";
+import "../chunk-JPZVKJ5X.js";
 import "../chunk-NPYPSDRM.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-5C6CNY2L.js";
+} from "../chunk-TLOR3QQH.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin,
   UniverDrawingPlugin
-} from "../chunk-C4DUVGK5.js";
+} from "../chunk-5R5XDJDK.js";
 import {
   zh_CN_default as zh_CN_default6,
   zh_CN_default2 as zh_CN_default7
@@ -42,7 +42,7 @@ import {
 import "../chunk-LI6UXASZ.js";
 import {
   UniverUIPlugin
-} from "../chunk-B6YQ7SMI.js";
+} from "../chunk-5RHXHS6U.js";
 import "../chunk-QWEPBHBP.js";
 import {
   zh_CN_default,
