@@ -3,67 +3,67 @@ import {
 } from "../chunk-NFKYF4QC.js";
 import "../chunk-REZ6O7M2.js";
 import "../chunk-62FTG3QU.js";
-import "../chunk-UHYGMHKS.js";
+import "../chunk-2IDILW5W.js";
 import {
   UniverVue3AdapterPlugin,
   UniverWebComponentAdapterPlugin
-} from "../chunk-YXOGCJKO.js";
-import "../chunk-43YEQ7HB.js";
+} from "../chunk-R55YX7SF.js";
+import "../chunk-7XPQTPOD.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-TGTAKPHR.js";
-import "../chunk-SDAVB62P.js";
+} from "../chunk-DTA7RAW2.js";
+import "../chunk-RZXFEOAY.js";
 import {
   zh_CN_default
 } from "../chunk-2LAJUHX4.js";
-import "../chunk-JJPKX3DU.js";
+import "../chunk-LJBYCUS6.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_WORKBOOK_DATA_DEMO,
   loadDebuggerLocale
-} from "../chunk-K6W2GKRK.js";
-import "../chunk-6ZNYZ6EW.js";
-import "../chunk-C7KN3NFM.js";
+} from "../chunk-KVUZJRD6.js";
+import "../chunk-NNUXFTRB.js";
+import "../chunk-Q55JV5YB.js";
 import {
   UniverSheetsNotePlugin,
   UniverSheetsTablePlugin
-} from "../chunk-QTMUPLBI.js";
-import "../chunk-2SRG5WVH.js";
+} from "../chunk-HENDEQSB.js";
+import "../chunk-GBQ6TIA6.js";
 import {
   UniverSheetsThreadCommentPlugin
-} from "../chunk-OJ535HBH.js";
-import "../chunk-6IG4XKCI.js";
+} from "../chunk-WRDRZCZG.js";
+import "../chunk-TVJDJVWT.js";
 import {
   UniverSheetsHyperLinkPlugin
-} from "../chunk-RVNGUYVE.js";
+} from "../chunk-25ZHUKTI.js";
 import {
   UniverSheetsSortPlugin
-} from "../chunk-7DRE6BXR.js";
+} from "../chunk-TSMXMGFP.js";
 import {
   UniverSheetsConditionalFormattingPlugin
-} from "../chunk-WBXJWUTV.js";
-import "../chunk-RRFTDJHZ.js";
+} from "../chunk-ROT7BXSD.js";
+import "../chunk-PU6OXUNH.js";
 import {
   UniverSheetsNumfmtPlugin
-} from "../chunk-3CUZLJHJ.js";
-import "../chunk-EE3KPUWO.js";
+} from "../chunk-HG2M4TBP.js";
+import "../chunk-DP5MPQJ2.js";
 import {
   UniverSheetsUIPlugin,
   whenSheetEditorFocused
-} from "../chunk-3KKLHCVI.js";
+} from "../chunk-UOBARI5X.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-AIJIYB5J.js";
+import "../chunk-YYOTA2UQ.js";
 import {
   UniverNetworkPlugin
-} from "../chunk-Z54UMSBV.js";
-import "../chunk-H4EGS4NT.js";
-import "../chunk-BMBXRLKY.js";
-import "../chunk-A6OGKKA2.js";
+} from "../chunk-QPMWDUP5.js";
+import "../chunk-NN34Z2NH.js";
+import "../chunk-YKTELMTW.js";
+import "../chunk-KJTYQ4C6.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin,
   UniverSheetsDataValidationPlugin
-} from "../chunk-FEXAVOZ3.js";
+} from "../chunk-7VG27XNI.js";
 import "../chunk-WRDP6BX6.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -74,18 +74,18 @@ import {
   IconManager,
   UniverUIPlugin,
   require_jsx_runtime
-} from "../chunk-LKR2FF62.js";
+} from "../chunk-TKYGRYPV.js";
 import {
   UniverSheetsFilterPlugin
-} from "../chunk-3DCU674G.js";
+} from "../chunk-WNULU2PR.js";
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
-} from "../chunk-OPIJVDZV.js";
+} from "../chunk-5S33VJ76.js";
 import "../chunk-GNAKMJK7.js";
 import {
   UniverSheetsFormulaPlugin
-} from "../chunk-Z22NX2ZN.js";
+} from "../chunk-HEUNIGNJ.js";
 import {
   ClearSelectionContentCommand,
   RemoveColByRangeCommand,
@@ -100,7 +100,7 @@ import {
   UniverRPCMainThreadPlugin,
   UniverSheetsPlugin,
   getSheetCommandTarget
-} from "../chunk-NHJ5OXWA.js";
+} from "../chunk-SE7GQC5E.js";
 import {
   CanceledError,
   DisposableCollection,
@@ -118,7 +118,7 @@ import {
   combineLatest,
   covertCellValues,
   sequenceExecute
-} from "../chunk-UVVCF4V5.js";
+} from "../chunk-7BSILHFI.js";
 import "../chunk-EQ2B2W73.js";
 import {
   __decorateClass,
@@ -627,13 +627,13 @@ function createNewInstance() {
     univer.createUnit(2 /* UNIVER_SHEET */, DEFAULT_WORKBOOK_DATA_DEMO);
   }
   setTimeout(() => {
-    import("../lazy-DXZS4LMU.js").then((lazy) => {
+    import("../lazy-3ZZJSQGO.js").then((lazy) => {
       const plugins = lazy.default();
       univer.registerPlugins(plugins);
     });
   }, LOAD_LAZY_PLUGINS_TIMEOUT);
   setTimeout(() => {
-    import("../very-lazy-HAQT4QXS.js").then((lazy) => {
+    import("../very-lazy-DKY6X4PZ.js").then((lazy) => {
       const plugins = lazy.default();
       univer.registerPlugins(plugins);
     });
