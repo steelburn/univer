@@ -4365,14 +4365,15 @@ var FRangeSheetsUIMixin = class extends FRange {
 };
 FRange.extend(FRangeSheetsUIMixin);
 function transformComponentKey(component, componentManager) {
-  const { componentKey, isVue3 } = component;
+  const { componentKey, framework } = component;
   let key;
   const disposableCollection = new DisposableCollection();
   if (typeof componentKey === "string") {
     key = componentKey;
   } else {
-    key = `External_${generateRandomId(6)}`;
-    disposableCollection.add(componentManager.register(key, componentKey, { framework: isVue3 ? "vue3" : "react" }));
+    const resolvedFramework = framework != null ? framework : "react";
+    key = resolvedFramework === "web-component" ? `external-${generateRandomId(6).toLowerCase()}` : `External_${generateRandomId(6)}`;
+    disposableCollection.add(componentManager.register(key, componentKey, { framework: resolvedFramework }));
   }
   return {
     key,

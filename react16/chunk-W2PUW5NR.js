@@ -7159,10 +7159,11 @@ var UniverWebComponentAdapterPlugin = class extends Plugin {
   onStarting() {
     const { createElement, useEffect, useRef } = this._componentManager.reactUtils;
     this._componentManager.setHandler("web-component", (component, name) => {
-      return () => createElement(WebComponentComponentWrapper, {
+      return (props) => createElement(WebComponentComponentWrapper, {
         component,
         props: {
-          name
+          name,
+          componentProps: props
         },
         reactUtils: { createElement, useEffect, useRef }
       });
@@ -7180,7 +7181,7 @@ UniverWebComponentAdapterPlugin = __decorateClass([
 ], UniverWebComponentAdapterPlugin);
 function WebComponentComponentWrapper(options) {
   const { component, props, reactUtils } = options;
-  const { name } = props != null ? props : {};
+  const { name, componentProps = {} } = props != null ? props : {};
   const { createElement, useEffect, useRef } = reactUtils;
   if (!name) {
     throw new Error("WebComponentComponentWrapper requires a name prop to define the custom element.");
@@ -7192,12 +7193,18 @@ function WebComponentComponentWrapper(options) {
   useEffect(() => {
     if (!domRef.current) return;
     const webComponent = document.createElement(name);
+    const webComponentWithProps = webComponent;
+    Object.entries(componentProps).forEach(([key, value]) => {
+      if (key !== "key") {
+        webComponentWithProps[key] = value;
+      }
+    });
     domRef.current.appendChild(webComponent);
     return () => {
       var _a;
       (_a = domRef.current) == null ? void 0 : _a.removeChild(webComponent);
     };
-  }, []);
+  }, [componentProps]);
   return createElement("div", { ref: domRef });
 }
 

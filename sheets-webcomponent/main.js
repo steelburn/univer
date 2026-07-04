@@ -25,7 +25,7 @@ import {
 import {
   UniverVue3AdapterPlugin,
   UniverWebComponentAdapterPlugin
-} from "../chunk-7I5XH3ZD.js";
+} from "../chunk-W2PUW5NR.js";
 import {
   UniverSheetsCrosshairHighlightPlugin
 } from "../chunk-RXRW3WQ5.js";
