@@ -5,10 +5,10 @@ import {
   render,
   require_jsx_runtime,
   require_react
-} from "./chunk-D4NC5GSO.js";
+} from "./chunk-5RNYM7UN.js";
 import {
   default_default
-} from "./chunk-2OKSGSKY.js";
+} from "./chunk-UGNHOIG6.js";
 import "./chunk-EQ2B2W73.js";
 import {
   __toESM
@@ -21,7 +21,7 @@ var import_react = __toESM(require_react(), 1);
 var package_default = {
   name: "univer",
   type: "module",
-  version: "1.0.0-alpha.1",
+  version: "1.0.0-alpha.2",
   private: true,
   packageManager: "pnpm@10.33.4",
   author: "DreamNum Co., Ltd. <developer@univer.ai>",
@@ -78,17 +78,17 @@ var package_default = {
   },
   devDependencies: {
     "@antfu/eslint-config": "^9.0.0",
-    "@commitlint/cli": "^21.1.0",
-    "@commitlint/config-conventional": "^21.1.0",
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint-react/eslint-plugin": "^5.9.1",
     "@eslint/compat": "^2.1.0",
     "@playwright/test": "^1.57.0",
-    "@types/node": "^26.0.0",
+    "@types/node": "^26.1.0",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
     "@univerjs-infra/shared": "workspace:*",
     "@univerjs/design": "workspace:*",
-    "@univerkit/verso": "1.0.0-beta.0",
+    "@univerkit/verso": "1.0.0-rc.1",
     eslint: "^10.5.0",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-react": "^7.37.5",
@@ -96,12 +96,12 @@ var package_default = {
     "eslint-plugin-react-refresh": "^0.5.3",
     husky: "^9.1.7",
     "lint-staged": "^17.0.8",
-    "posthog-node": "^5.38.5",
+    "posthog-node": "^5.39.4",
     react: "19.2.7",
     "react-dom": "19.2.7",
     serve: "^14.2.6",
     tailwindcss: "3.4.18",
-    turbo: "^2.10.0",
+    turbo: "^2.10.3",
     typescript: "^6.0.3",
     vitest: "^4.1.9"
   },
@@ -236,11 +236,11 @@ if (true) {
     // eslint-disable-next-line node/prefer-global/process
     NODE_ENV: "production",
     // eslint-disable-next-line node/prefer-global/process
-    GIT_COMMIT_HASH: "e63cb60",
+    GIT_COMMIT_HASH: "3e3f509",
     // eslint-disable-next-line node/prefer-global/process
     GIT_REF_NAME: "feat/embed-first-version",
     // eslint-disable-next-line node/prefer-global/process
-    BUILD_TIME: "2026-07-03T12:14:15.114Z"
+    BUILD_TIME: "2026-07-05T19:22:08.581Z"
   });
 }
 function DemoList({ items }) {
