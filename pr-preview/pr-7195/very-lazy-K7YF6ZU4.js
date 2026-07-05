@@ -18,11 +18,11 @@ import {
 } from "./chunk-BVWKT4FU.js";
 import {
   UniverDebuggerPlugin
-} from "./chunk-X6BJM3V5.js";
+} from "./chunk-2RHGJZ5W.js";
 import {
   UniverWatermarkPlugin
 } from "./chunk-Q6X2N7NZ.js";
-import "./chunk-KMXQRECN.js";
+import "./chunk-CRNV4F6I.js";
 import {
   loadDebuggerLocale
 } from "./chunk-QGUWVD5K.js";
@@ -32,9 +32,9 @@ import {
 } from "./chunk-UXZRY7K5.js";
 import "./chunk-SBAKQZSC.js";
 import "./chunk-AB2ASX4N.js";
-import "./chunk-XMZGDVTQ.js";
+import "./chunk-YQHI7JXF.js";
 import "./chunk-TIEX6CJH.js";
-import "./chunk-IZ46N3AS.js";
+import "./chunk-E5WZM5UY.js";
 import "./chunk-RZPW4CGI.js";
 import "./chunk-MEUEE4XB.js";
 import "./chunk-XIWGWHOE.js";
@@ -45,7 +45,7 @@ import "./chunk-V6KA3GW7.js";
 import "./chunk-EQ2B2W73.js";
 import "./chunk-HECJ2TYE.js";
 
-// src/sheets-no-worker/very-lazy.ts
+// src/sheets-multi-units/very-lazy.ts
 var IS_E2E = false;
 function getVeryLazyPlugins() {
   const plugins = [

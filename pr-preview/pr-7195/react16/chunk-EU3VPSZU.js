@@ -6,14 +6,14 @@ import {
 } from "./chunk-Q6X2N7NZ.js";
 import {
   DocFloatDomController
-} from "./chunk-KMXQRECN.js";
+} from "./chunk-CRNV4F6I.js";
 import {
   DEFAULT_WORKBOOK_DATA_DEMO,
   DEFAULT_WORKBOOK_DATA_DEMO_DEFAULT_STYLE
 } from "./chunk-QGUWVD5K.js";
 import {
   SheetCanvasFloatDomManagerService
-} from "./chunk-XMZGDVTQ.js";
+} from "./chunk-YQHI7JXF.js";
 import {
   BoldIcon,
   Button,
@@ -803,9 +803,9 @@ function useSnapshot() {
       const doc = univerInstanceService.getCurrentUnitOfType(1 /* UNIVER_DOC */);
       const snapshot2 = resourceLoaderService.saveUnit(doc.getUnitId());
       if (true) {
-        const gitHash = "c339bef";
+        const gitHash = "e3b0a3a";
         const gitBranch = "feat/object-list-floating-layers";
-        const buildTime = "2026-07-05T20:38:14.133Z";
+        const buildTime = "2026-07-05T20:50:29.721Z";
         snapshot2.__env__ = { gitHash, gitBranch, buildTime };
       }
       const text = JSON.stringify(snapshot2, null, 2);
@@ -818,9 +818,9 @@ function useSnapshot() {
     }
     const snapshot = resourceLoaderService.saveUnit(workbook.getUnitId());
     if (true) {
-      const gitHash = "c339bef";
+      const gitHash = "e3b0a3a";
       const gitBranch = "feat/object-list-floating-layers";
-      const buildTime = "2026-07-05T20:38:14.133Z";
+      const buildTime = "2026-07-05T20:50:29.721Z";
       snapshot.__env__ = { gitHash, gitBranch, buildTime };
     }
     if (value === "sheet") {

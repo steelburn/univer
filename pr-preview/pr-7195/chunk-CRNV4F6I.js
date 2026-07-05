@@ -9,7 +9,7 @@ import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin,
   getDocDrawingRenderOrder
-} from "./chunk-IZ46N3AS.js";
+} from "./chunk-E5WZM5UY.js";
 import {
   DOC_CONTENT_INSERT_MENU_ID,
   DOC_PARAGRAPH_T_INSERT_BELOW_MENU_ID,

@@ -27,7 +27,7 @@ import {
   UniverDrawingUIPlugin,
   disposeDrawingRenderObject,
   insertGroupObject
-} from "./chunk-IZ46N3AS.js";
+} from "./chunk-E5WZM5UY.js";
 import {
   DRAWING_IMAGE_ALLOW_IMAGE_LIST,
   DRAWING_IMAGE_COUNT_LIMIT,
