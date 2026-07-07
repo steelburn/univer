@@ -5,10 +5,10 @@ import {
   render,
   require_jsx_runtime,
   require_react
-} from "./chunk-KAOBDX34.js";
+} from "./chunk-5VTXYISK.js";
 import {
   default_default
-} from "./chunk-QPAXVCAC.js";
+} from "./chunk-CBGIOZGI.js";
 import "./chunk-EQ2B2W73.js";
 import {
   __toESM
@@ -80,7 +80,7 @@ var package_default = {
     "@antfu/eslint-config": "^9.0.0",
     "@commitlint/cli": "^21.2.0",
     "@commitlint/config-conventional": "^21.2.0",
-    "@eslint-react/eslint-plugin": "^5.9.1",
+    "@eslint-react/eslint-plugin": "^5.11.2",
     "@eslint/compat": "^2.1.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^26.1.0",
@@ -101,9 +101,9 @@ var package_default = {
     "react-dom": "19.2.7",
     serve: "^14.2.6",
     tailwindcss: "3.4.18",
-    turbo: "^2.10.3",
+    turbo: "^2.10.4",
     typescript: "^6.0.3",
-    vitest: "^4.1.9"
+    vitest: "^4.1.10"
   },
   pnpm: {
     overrides: {
@@ -236,11 +236,11 @@ if (true) {
     // eslint-disable-next-line node/prefer-global/process
     NODE_ENV: "production",
     // eslint-disable-next-line node/prefer-global/process
-    GIT_COMMIT_HASH: "559a2ed",
+    GIT_COMMIT_HASH: "532b148",
     // eslint-disable-next-line node/prefer-global/process
     GIT_REF_NAME: "feat/embed-first-version",
     // eslint-disable-next-line node/prefer-global/process
-    BUILD_TIME: "2026-07-07T04:16:47.398Z"
+    BUILD_TIME: "2026-07-07T06:25:21.535Z"
   });
 }
 function DemoList({ items }) {
