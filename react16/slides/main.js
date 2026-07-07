@@ -1,25 +1,25 @@
-import "../chunk-ASHHQG6J.js";
+import "../chunk-G4SAIXP6.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-MREP735T.js";
+} from "../chunk-X7ABTSW5.js";
 import {
   UniverWatermarkPlugin
-} from "../chunk-5SVECR5F.js";
+} from "../chunk-PXNCLMC7.js";
 import {
   zh_CN_default
 } from "../chunk-RW443FRL.js";
-import "../chunk-7LPHGALB.js";
+import "../chunk-E6XF33KB.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_SLIDE_DATA,
   ObjectProvider,
   UniverSlidesPlugin,
   loadDebuggerLocale
-} from "../chunk-ASADV2TL.js";
-import "../chunk-V5V2TBM2.js";
-import "../chunk-S47X7LKL.js";
+} from "../chunk-2QLJP2FS.js";
+import "../chunk-JJUIGY5K.js";
+import "../chunk-XVYLP3GF.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-VO3VU7DW.js";
+import "../chunk-PXHBEZNC.js";
 import {
   DOCS_COMPONENT_MAIN_LAYER_INDEX,
   DRAWING_IMAGE_ALLOW_IMAGE_LIST,
@@ -35,7 +35,7 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getImageSize
-} from "../chunk-WE43C7WD.js";
+} from "../chunk-UYAWZQ7D.js";
 import "../chunk-SNSWR7JB.js";
 import "../chunk-LI6UXASZ.js";
 import {
@@ -74,14 +74,14 @@ import {
   scrollbarClassName,
   useDependency,
   useObservable
-} from "../chunk-7UIAQ5RJ.js";
+} from "../chunk-K7QVM4VQ.js";
 import "../chunk-2FVEG47S.js";
-import "../chunk-EJ7SRPYX.js";
+import "../chunk-XRSVWX6F.js";
 import "../chunk-GNAKMJK7.js";
-import "../chunk-7MAGD6AG.js";
+import "../chunk-YGL77P23.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-65ZVRLT5.js";
+} from "../chunk-UZB6LHUM.js";
 import {
   BehaviorSubject,
   DEFAULT_EMPTY_DOCUMENT_VALUE,
@@ -131,7 +131,7 @@ import {
   pxToNum,
   takeUntil,
   toDisposable
-} from "../chunk-LM6KX6ET.js";
+} from "../chunk-QJESARYQ.js";
 import "../chunk-EQ2B2W73.js";
 import {
   __decorateClass,
@@ -1755,7 +1755,7 @@ var package_default = {
     "@univerjs/docs-ui": "workspace:*",
     "@univerjs/drawing": "workspace:*",
     "@univerjs/engine-render": "workspace:*",
-    "@univerjs/icons": "1.18.0",
+    "@univerjs/icons": "1.19.0",
     "@univerjs/slides": "workspace:*",
     "@univerjs/ui": "workspace:*"
   },
@@ -1766,7 +1766,7 @@ var package_default = {
     rxjs: "^7.8.2",
     tailwindcss: "3.4.18",
     typescript: "^6.0.3",
-    vitest: "^4.1.9"
+    vitest: "^4.1.10"
   }
 };
 

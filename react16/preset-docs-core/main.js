@@ -2,16 +2,16 @@ import {
   UniverDocsHyperLinkPlugin,
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-2FDBIBDR.js";
+} from "../chunk-LVX4DVX7.js";
 import {
   UniverThreadCommentUIPlugin
-} from "../chunk-BNRDLB65.js";
+} from "../chunk-7NWWYHLN.js";
 import {
   createUniver
-} from "../chunk-JKEL3VJP.js";
+} from "../chunk-YLLB75SC.js";
 import {
   UniverDocsDrawingUIPlugin
-} from "../chunk-7LPHGALB.js";
+} from "../chunk-E6XF33KB.js";
 import {
   zh_CN_default as zh_CN_default2,
   zh_CN_default2 as zh_CN_default3,
@@ -19,22 +19,22 @@ import {
 } from "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE
-} from "../chunk-ASADV2TL.js";
-import "../chunk-MFH5G5VE.js";
+} from "../chunk-2QLJP2FS.js";
+import "../chunk-ZIUMVMVX.js";
 import {
   UniverNetworkPlugin
-} from "../chunk-YWA6VLD6.js";
-import "../chunk-LQV6YUX3.js";
-import "../chunk-O4AGYTA4.js";
+} from "../chunk-DSWBQDJK.js";
+import "../chunk-TJ56ZIIJ.js";
+import "../chunk-HIJCDAAU.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-VO3VU7DW.js";
+} from "../chunk-PXHBEZNC.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin,
   UniverDrawingPlugin
-} from "../chunk-WE43C7WD.js";
+} from "../chunk-UYAWZQ7D.js";
 import {
   zh_CN_default as zh_CN_default6,
   zh_CN_default2 as zh_CN_default7
@@ -42,23 +42,23 @@ import {
 import "../chunk-LI6UXASZ.js";
 import {
   UniverUIPlugin
-} from "../chunk-7UIAQ5RJ.js";
-import "../chunk-EJ7SRPYX.js";
+} from "../chunk-K7QVM4VQ.js";
+import "../chunk-XRSVWX6F.js";
 import {
   zh_CN_default,
   zh_CN_default2 as zh_CN_default5,
   zh_CN_default3 as zh_CN_default8
 } from "../chunk-GNAKMJK7.js";
-import "../chunk-7MAGD6AG.js";
+import "../chunk-YGL77P23.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-65ZVRLT5.js";
+} from "../chunk-UZB6LHUM.js";
 import {
   IImageIoService,
   UniverRenderEnginePlugin,
   default_default,
   mergeLocales
-} from "../chunk-LM6KX6ET.js";
+} from "../chunk-QJESARYQ.js";
 import "../chunk-EQ2B2W73.js";
 import "../chunk-HECJ2TYE.js";
 
