@@ -1,25 +1,25 @@
-import "../chunk-7LZVBTTV.js";
+import "../chunk-IFZ2V2VA.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-MBKE5ZPJ.js";
+} from "../chunk-ETO43X5Y.js";
 import {
   UniverWatermarkPlugin
-} from "../chunk-GOEYCPF2.js";
+} from "../chunk-J7NXJW2W.js";
 import {
   zh_CN_default
-} from "../chunk-PLO6OHDI.js";
-import "../chunk-GREPP2SB.js";
+} from "../chunk-LOC26TUS.js";
+import "../chunk-CCFBJZ6D.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_SLIDE_DATA,
   ObjectProvider,
   UniverSlidesPlugin,
   loadDebuggerLocale
-} from "../chunk-VVCDHPF3.js";
-import "../chunk-NGNEGYS4.js";
-import "../chunk-RSE4XJ65.js";
+} from "../chunk-C742WVOX.js";
+import "../chunk-5UVQ6OII.js";
+import "../chunk-A4MPPH5A.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-KWWXQZKE.js";
+import "../chunk-F4HTKBLM.js";
 import {
   DOCS_COMPONENT_MAIN_LAYER_INDEX,
   DRAWING_IMAGE_ALLOW_IMAGE_LIST,
@@ -35,8 +35,8 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getImageSize
-} from "../chunk-PYZPGY5B.js";
-import "../chunk-WRDP6BX6.js";
+} from "../chunk-UEVG3UZ4.js";
+import "../chunk-SNSWR7JB.js";
 import "../chunk-LI6UXASZ.js";
 import {
   AddImageIcon,
@@ -74,14 +74,14 @@ import {
   scrollbarClassName,
   useDependency,
   useObservable
-} from "../chunk-QNYCEYFA.js";
+} from "../chunk-KAOBDX34.js";
 import "../chunk-2FVEG47S.js";
-import "../chunk-LDR5HMSP.js";
+import "../chunk-RBL4FSUX.js";
 import "../chunk-YTTBVE7U.js";
-import "../chunk-IPR36F56.js";
+import "../chunk-3WUY5WXU.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-P3BUXCOC.js";
+} from "../chunk-YIWQ4VME.js";
 import {
   BehaviorSubject,
   DEFAULT_EMPTY_DOCUMENT_VALUE,
@@ -131,7 +131,7 @@ import {
   pxToNum,
   takeUntil,
   toDisposable
-} from "../chunk-B4VGFPLO.js";
+} from "../chunk-QPAXVCAC.js";
 import "../chunk-EQ2B2W73.js";
 import {
   __decorateClass,
@@ -1755,7 +1755,7 @@ var package_default = {
     "@univerjs/docs-ui": "workspace:*",
     "@univerjs/drawing": "workspace:*",
     "@univerjs/engine-render": "workspace:*",
-    "@univerjs/icons": "1.16.0",
+    "@univerjs/icons": "1.18.0",
     "@univerjs/slides": "workspace:*",
     "@univerjs/ui": "workspace:*"
   },

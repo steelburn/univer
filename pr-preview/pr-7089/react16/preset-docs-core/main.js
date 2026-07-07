@@ -2,16 +2,16 @@ import {
   UniverDocsHyperLinkPlugin,
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-HJX7M6TJ.js";
+} from "../chunk-YE7ADFE7.js";
 import {
   UniverThreadCommentUIPlugin
-} from "../chunk-6VTYCSRK.js";
+} from "../chunk-TMAMEZIG.js";
 import {
   createUniver
-} from "../chunk-VGFAHMIX.js";
+} from "../chunk-2GK253VX.js";
 import {
   UniverDocsDrawingUIPlugin
-} from "../chunk-GREPP2SB.js";
+} from "../chunk-CCFBJZ6D.js";
 import {
   zh_CN_default as zh_CN_default2,
   zh_CN_default2 as zh_CN_default3,
@@ -19,47 +19,47 @@ import {
 } from "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE
-} from "../chunk-VVCDHPF3.js";
-import "../chunk-6CC75HBB.js";
+} from "../chunk-C742WVOX.js";
+import "../chunk-OLD5G3OI.js";
 import {
   UniverNetworkPlugin
-} from "../chunk-B7NCITP5.js";
-import "../chunk-2BLR3RWD.js";
-import "../chunk-F3GIICXC.js";
+} from "../chunk-K2CRYMG5.js";
+import "../chunk-YKR3TIF4.js";
+import "../chunk-J5IWGUYY.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-KWWXQZKE.js";
+} from "../chunk-F4HTKBLM.js";
 import {
   UniverDocsPlugin,
   UniverDocsUIPlugin,
   UniverDrawingPlugin
-} from "../chunk-PYZPGY5B.js";
+} from "../chunk-UEVG3UZ4.js";
 import {
   zh_CN_default as zh_CN_default6,
   zh_CN_default2 as zh_CN_default8
-} from "../chunk-WRDP6BX6.js";
+} from "../chunk-SNSWR7JB.js";
 import "../chunk-LI6UXASZ.js";
 import {
   UniverUIPlugin
-} from "../chunk-QNYCEYFA.js";
-import "../chunk-LDR5HMSP.js";
+} from "../chunk-KAOBDX34.js";
+import "../chunk-RBL4FSUX.js";
 import {
   zh_CN_default,
   zh_CN_default2 as zh_CN_default5,
   zh_CN_default3 as zh_CN_default7,
   zh_CN_default4 as zh_CN_default9
 } from "../chunk-YTTBVE7U.js";
-import "../chunk-IPR36F56.js";
+import "../chunk-3WUY5WXU.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-P3BUXCOC.js";
+} from "../chunk-YIWQ4VME.js";
 import {
   IImageIoService,
   UniverRenderEnginePlugin,
   default_default,
   mergeLocales
-} from "../chunk-B4VGFPLO.js";
+} from "../chunk-QPAXVCAC.js";
 import "../chunk-EQ2B2W73.js";
 import "../chunk-HECJ2TYE.js";
 

@@ -1,39 +1,39 @@
-import "../chunk-7LZVBTTV.js";
+import "../chunk-IFZ2V2VA.js";
 import {
   UniverDocsMentionUIPlugin
-} from "../chunk-ZFHH4XAA.js";
+} from "../chunk-IXSAWI5E.js";
 import {
   UniverDocsHyperLinkUIPlugin,
   UniverDocsThreadCommentUIPlugin
-} from "../chunk-HJX7M6TJ.js";
-import "../chunk-6VTYCSRK.js";
+} from "../chunk-YE7ADFE7.js";
+import "../chunk-TMAMEZIG.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-MBKE5ZPJ.js";
+} from "../chunk-ETO43X5Y.js";
 import {
   UniverWatermarkPlugin
-} from "../chunk-GOEYCPF2.js";
+} from "../chunk-J7NXJW2W.js";
 import {
   zh_CN_default
-} from "../chunk-PLO6OHDI.js";
+} from "../chunk-LOC26TUS.js";
 import {
   InsertDocImageCommand,
   UniverDocsDrawingUIPlugin
-} from "../chunk-GREPP2SB.js";
+} from "../chunk-CCFBJZ6D.js";
 import "../chunk-DBRQB4K6.js";
 import {
   DEFAULT_DOCUMENT_DATA_SIMPLE,
   loadDebuggerLocale
-} from "../chunk-VVCDHPF3.js";
-import "../chunk-NGNEGYS4.js";
-import "../chunk-RSE4XJ65.js";
+} from "../chunk-C742WVOX.js";
+import "../chunk-5UVQ6OII.js";
+import "../chunk-A4MPPH5A.js";
 import "../chunk-O4CRIMVC.js";
-import "../chunk-2BLR3RWD.js";
-import "../chunk-F3GIICXC.js";
+import "../chunk-YKR3TIF4.js";
+import "../chunk-J5IWGUYY.js";
 import {
   UniverDocsDrawingPlugin,
   UniverDrawingUIPlugin
-} from "../chunk-KWWXQZKE.js";
+} from "../chunk-F4HTKBLM.js";
 import {
   BulletListCommand,
   CutContentCommand,
@@ -55,8 +55,8 @@ import {
   UniverDocsUIPlugin,
   UniverDrawingPlugin,
   getAnchorBounding
-} from "../chunk-PYZPGY5B.js";
-import "../chunk-WRDP6BX6.js";
+} from "../chunk-UEVG3UZ4.js";
+import "../chunk-SNSWR7JB.js";
 import "../chunk-LI6UXASZ.js";
 import {
   ComponentManager,
@@ -77,16 +77,16 @@ import {
   useDependency,
   useEvent,
   useObservable
-} from "../chunk-QNYCEYFA.js";
+} from "../chunk-KAOBDX34.js";
 import "../chunk-2FVEG47S.js";
 import {
   FUniver
-} from "../chunk-LDR5HMSP.js";
+} from "../chunk-RBL4FSUX.js";
 import "../chunk-YTTBVE7U.js";
-import "../chunk-IPR36F56.js";
+import "../chunk-3WUY5WXU.js";
 import {
   UniverFormulaEnginePlugin
-} from "../chunk-P3BUXCOC.js";
+} from "../chunk-YIWQ4VME.js";
 import {
   BehaviorSubject,
   DependentOn,
@@ -112,7 +112,7 @@ import {
   ptToPixel,
   tap,
   toDisposable
-} from "../chunk-B4VGFPLO.js";
+} from "../chunk-QPAXVCAC.js";
 import "../chunk-EQ2B2W73.js";
 import {
   __decorateClass,
@@ -1074,7 +1074,7 @@ var package_default = {
     "@univerjs/drawing": "workspace:*",
     "@univerjs/drawing-ui": "workspace:*",
     "@univerjs/engine-render": "workspace:*",
-    "@univerjs/icons": "1.16.0",
+    "@univerjs/icons": "1.18.0",
     "@univerjs/ui": "workspace:*"
   },
   devDependencies: {
