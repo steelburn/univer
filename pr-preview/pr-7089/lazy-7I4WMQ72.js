@@ -8,7 +8,7 @@ import "./chunk-CZY73HJO.js";
 import "./chunk-XBC5FNZ2.js";
 import {
   UniverSheetsDrawingUIPlugin
-} from "./chunk-WHUMLG4K.js";
+} from "./chunk-IQENMDCM.js";
 import "./chunk-JDHBA3JI.js";
 import "./chunk-WN43UG3C.js";
 import "./chunk-PCKQZKEB.js";

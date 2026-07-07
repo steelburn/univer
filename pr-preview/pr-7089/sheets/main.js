@@ -11,7 +11,7 @@ import {
 import "../chunk-GS6S6FAZ.js";
 import {
   UniverDebuggerPlugin
-} from "../chunk-PXMELJU4.js";
+} from "../chunk-EHXGXKFB.js";
 import "../chunk-J7NXJW2W.js";
 import {
   zh_CN_default
@@ -23,7 +23,7 @@ import {
   loadDebuggerLocale
 } from "../chunk-DELWERXH.js";
 import "../chunk-WUH7M4RH.js";
-import "../chunk-EVZPOC4T.js";
+import "../chunk-N5R4OMOW.js";
 import {
   UniverSheetsNotePlugin,
   UniverSheetsTablePlugin
@@ -46,7 +46,7 @@ import "../chunk-CZY73HJO.js";
 import {
   UniverSheetsNumfmtPlugin
 } from "../chunk-XBC5FNZ2.js";
-import "../chunk-WHUMLG4K.js";
+import "../chunk-IQENMDCM.js";
 import {
   UniverSheetsUIPlugin,
   whenSheetEditorFocused
@@ -713,13 +713,13 @@ function createNewInstance() {
     univer.createUnit(2 /* UNIVER_SHEET */, DEFAULT_WORKBOOK_DATA_DEMO);
   }
   setTimeout(() => {
-    import("../lazy-EPIUQM2V.js").then((lazy) => {
+    import("../lazy-R7MMNVEM.js").then((lazy) => {
       const plugins = lazy.default();
       univer.registerPlugins(plugins);
     });
   }, LOAD_LAZY_PLUGINS_TIMEOUT);
   setTimeout(() => {
-    import("../very-lazy-YARRMDYR.js").then((lazy) => {
+    import("../very-lazy-G2WKQQHK.js").then((lazy) => {
       const plugins = lazy.default();
       univer.registerPlugins(plugins);
     });

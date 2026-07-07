@@ -6883,13 +6883,6 @@ SheetDrawingUIController = __decorateClass([
 ], SheetDrawingUIController);
 
 // ../packages/sheets-drawing-ui/src/embed/floating-host/register-sheets-drawing-floating-host.ts
-var SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES = [
-  [SheetCanvasFloatDomManagerService]
-];
-function registerSheetsDrawingFloatingHostCapability(injector) {
-  registerDependencies(injector, SHEETS_DRAWING_FLOATING_HOST_DEPENDENCIES);
-  touchSheetsDrawingFloatingHostCapabilityWhenReady(injector);
-}
 function touchSheetsDrawingFloatingHostCapability(injector) {
   touchDependencies(injector, [[SheetCanvasFloatDomManagerService]]);
 }
@@ -7253,7 +7246,6 @@ var UniverSheetsDrawingUIPlugin = class extends Plugin {
     this._configService.setConfig(SHEETS_DRAWING_UI_PLUGIN_CONFIG_KEY, rest);
   }
   onStarting() {
-    registerSheetsDrawingFloatingHostCapability(this._injector);
     registerDependencies(this._injector, [
       [ComponentsController],
       [SheetCanvasFloatDomManagerService],
@@ -7271,6 +7263,7 @@ var UniverSheetsDrawingUIPlugin = class extends Plugin {
       [IDrawingContextMenuService, { useClass: DrawingContextMenuService }],
       [DrawingContextMenuController]
     ]);
+    touchSheetsDrawingFloatingHostCapabilityWhenReady(this._injector);
     this._injector.get(ComponentsController);
   }
   onReady() {
